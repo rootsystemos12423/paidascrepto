@@ -45,7 +45,7 @@
                             @foreach ($cryptoPrices as $crypto)
                             <div class="flex items-center text-xs font-medium">
                                 <!-- Logo da Cripto -->
-                                <img src="/images/cripto-logos/{{ strtolower($crypto->crypto_symbol) }}.png" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
+                                <img src="/images/cripto-logos/{{ strtoupper($crypto->crypto_symbol) }}.png" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
                                 <!-- Valorização/Desvalorização -->
                                 @if ($crypto->change_pct_24h !== null)
                                 @if ($crypto->change_pct_24h > 0)
