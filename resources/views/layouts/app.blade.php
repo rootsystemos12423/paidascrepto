@@ -32,7 +32,7 @@
             <x-sidebar class="w-1/4 bg-white shadow-lg h-screen relative" />
 
             <!-- Conteúdo Principal -->
-            <div class="flex-1 p-6 md:p-12 max-w-full h-screen">
+            <div class="flex-1 md:p-12 max-w-full h-screen">
                <!-- Header -->
 <header class="mb-6 bg-white p-4 rounded-lg flex flex-col md:flex-row items-center justify-between">
     <!-- Título da Dashboard -->
