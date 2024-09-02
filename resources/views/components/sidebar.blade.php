@@ -14,7 +14,7 @@
     </header>
 
     <!-- Sidebar (visível no desktop, oculta no mobile) -->
-    <div class="w-64 h-dvh bg-white shadow-lg hidden lg:flex fixed left-0 lg:flex-col">
+    <div class="w-64 h-dvh bg-white shadow-lg hidden lg:flex fixed left-0 lg:flex-col overflow-y-auto">
             <!-- Logo -->
             <div class="flex items-center justify-center py-6">
                 <img src="/images/logo.png" alt="Logo" class="h-10">

@@ -37,25 +37,26 @@
     </header>
 
     <div class="flex flex-col items-center p-3 justify-center mt-12 w-full text-center">
-        <h1 class="text-black font-bold text-2xl sm:text-4xl md:text-5xl w-full sm:w-3/4 lg:w-2/3 xl:w-1/3 px-2">
+        <h1 class="text-black font-bold text-2xl sm:text-4xl md:text-5xl w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 px-2">
             Retornos de até <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">5% ao dia sobre o valor investido</span>, com esse novo ecossistema
         </h1>
-        <span class="p-4 text-gray-600 text-sm sm:text-lg w-full sm:w-3/4 lg:w-1/2 xl:w-1/4 px-4">
+        <span class="p-4 text-gray-600 text-sm sm:text-lg w-full sm:w-3/4 lg:w-1/2 xl:w-1/3">
             Esqueça tudo que já viu no universo de criptomoedas, esse novo ecossistema te paga diariamente os rendimentos das suas criptos <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent font-bold">botando mais dinheiro no seu bolso.</span>
         </span>
     </div>
-
-    <div class="w-full flex justify-center">
-        <iframe class="w-1/4" height="500" src="https://www.youtube.com/embed/DteoazjBabE" title="Mc Ryan SP levou mais de R$70.000,00 em roupas EXCLUSIVAS!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
-    </div>
-
+    
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 md:w-1/12 w-full text-center">ADQUIRIR COTAS</a>
+        <iframe class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2" height="315" src="https://www.youtube.com/embed/DteoazjBabE" title="Mc Ryan SP levou mais de R$70.000,00 em roupas EXCLUSIVAS!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+    
+    <div class="w-full flex justify-center p-6">
+        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
+    </div>
+    
 
     <div class="flex justify-center">
         <div class="w-full text-center p-8">
-            <h1 class="text-4xl text-gray-700 font-medium mb-8">Principais Parceiros Que Confiam Na Osorno</h1>
+            <h1 class="lg:text-4xl md:text-2xl text-xl text-gray-700 font-medium mb-8">Principais Parceiros Que Confiam Na Osorno</h1>
     
             <!-- Grid Responsivo -->
             <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
@@ -72,7 +73,7 @@
                     <img src="/images/logo-acionistas/once-up.png" class="w-30 h-20 sm:w-32 sm:h-10 md:w-40 md:h-24 lg:w-50 lg:h-30 object-contain">
                 </div>
                 <div class="flex justify-center items-center p-4">
-                    <img src="/images/logo-acionistas/msci.png" class="w-32 h-8 sm:w-40 sm:h-10 md:w-50 md:h-12 lg:w-50 lg:h-14 object-contain">
+                    <img src="/images/logo-acionistas/msci.png" class="w-32 h-8 sm:w-40 sm:h-10 md:w-50 md:h-20 lg:w-50 lg:h-20 object-contain">
                 </div>
                 <!-- Adicione mais imagens aqui -->
             </div>
@@ -221,13 +222,13 @@
                 funcionamento constante de mais de 99% em todas as
                 operações em curso.</span>
         </div>
-        <div class="chart-container">
+        <div class="chart-container flex justify-center">
             <canvas id="futuristicChart"></canvas>
         </div>
     </div>
 
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 md:w-1/12 w-full text-center">ADQUIRIR COTAS</a>
+        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
     </div>
 
     <div class="bg-gray-200 text-white p-8 flex flex-col items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
@@ -262,7 +263,7 @@
     </div>
 
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 md:w-1/12 w-full text-center">ADQUIRIR COTAS</a>
+        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
     </div>
     
 

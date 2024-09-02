@@ -7,9 +7,9 @@
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <!-- Tabs -->
                 <nav class="flex border-b border-gray-300">
-                    <a @click.prevent="tab = 'crypto'" :class="{'bg-gray-200 text-gray-800': tab === 'crypto'}" class="flex-1 text-xs md:text-lg text-center px-4 py-2 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Criptomoeda</a>
-                    <a @click.prevent="tab = 'bank'" :class="{'bg-gray-200 text-gray-800': tab === 'bank'}" class="flex-1 text-xs md:text-lg text-center px-4 py-2 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Transferência Bancária</a>
-                    <a @click.prevent="tab = 'pix'" :class="{'bg-gray-200 text-gray-800': tab === 'pix'}" class="flex-1 text-xs md:text-lg text-center px-4 py-2 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Transferência Pix</a>
+                    <a @click.prevent="tab = 'crypto'" :class="{'bg-gray-200 text-gray-800': tab === 'crypto'}" class="flex-1 text-xs md:text-lg text-center px-2 py-1 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Criptomoeda</a>
+                    <a @click.prevent="tab = 'bank'" :class="{'bg-gray-200 text-gray-800': tab === 'bank'}" class="flex-1 text-xs md:text-lg text-center px-2 py-1 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Transferência Bancária</a>
+                    <a @click.prevent="tab = 'pix'" :class="{'bg-gray-200 text-gray-800': tab === 'pix'}" class="flex-1 text-xs md:text-lg text-center px-4 py-1 text-gray-600 rounded-t-lg hover:bg-gray-200 cursor-pointer" href="#">Transferência Pix</a>
                 </nav>
     
                 <!-- Tab Contents -->

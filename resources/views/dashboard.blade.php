@@ -76,13 +76,13 @@
 
         <div class="rounded-xl mb-8 w-full mt-4">
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Saldo do Usuário</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 <!-- BTC -->
                 <div class="flex items-center border border-gray-200 p-6 space-x-4 rounded-xl shadow-sm bg-gray-50">
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.png" alt="BTC Logo">
                     <div>
                         <p class="font-semibold text-gray-800">BTC</p>
-                        <p class="text-2xl text-gray-700">{{ $user->balance->balance_btc }}</p>
+                        <p class="text-xl text-gray-700">{{ $user->balance->balance_btc }}</p>
                         <p class="text-sm text-gray-500">
                             R$ {{ number_format($user->balance->balance_btc * $cryptoPrices['BTC']->price_in_brl, 2, ',', '.') }}
                         </p>
@@ -94,7 +94,7 @@
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/ALPH.png" alt="ALPH Logo">
                     <div>
                         <p class="font-semibold text-gray-800">ALPH</p>
-                        <p class="text-2xl text-gray-700">{{ $user->balance->balance_alph }}</p>
+                        <p class="text-xl text-gray-700">{{ $user->balance->balance_alph }}</p>
                         <p class="text-sm text-gray-500">
                             R$ {{ number_format($user->balance->balance_alph * $cryptoPrices['ALPH']->price_in_brl, 2, ',', '.') }}
                         </p>
@@ -106,7 +106,7 @@
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/KAS.png" alt="KAS Logo">
                     <div>
                         <p class="font-semibold text-gray-800">KAS</p>
-                        <p class="text-2xl text-gray-700">{{ $user->balance->balance_kaspa }}</p>
+                        <p class="text-xl text-gray-700">{{ $user->balance->balance_kaspa }}</p>
                         <p class="text-sm text-gray-500">
                             R$ {{ number_format($user->balance->balance_kaspa * $cryptoPrices['KAS']->price_in_brl, 2, ',', '.') }}
                         </p>
@@ -118,7 +118,7 @@
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/LTC.png" alt="LTC Logo">
                     <div>
                         <p class="font-semibold text-gray-800">LTC</p>
-                        <p class="text-2xl text-gray-700">{{ $user->balance->balance_ltc }}</p>
+                        <p class="text-xl text-gray-700">{{ $user->balance->balance_ltc }}</p>
                         <p class="text-sm text-gray-500">
                             R$ {{ number_format($user->balance->balance_ltc * $cryptoPrices['LTC']->price_in_brl, 2, ',', '.') }}
                         </p>
@@ -130,11 +130,12 @@
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BRL.webp" alt="BRL Logo">
                     <div>
                         <p class="font-semibold text-gray-800">BRL</p>
-                        <p class="text-2xl text-gray-700">{{ $user->balance->balance_brl }} BRL</p>
+                        <p class="text-xl text-gray-700">{{ $user->balance->balance_brl }} BRL</p>
                     </div>
                 </div>
             </div>
         </div>
+        
         
     </div>
 

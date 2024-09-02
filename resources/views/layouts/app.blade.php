@@ -33,62 +33,70 @@
 
             <!-- Conteúdo Principal -->
             <div class="flex-1 p-6 md:p-12 max-w-full h-screen">
-                <!-- Header -->
-                <header class="mb-6 bg-white p-4 rounded-lg flex flex-col md:flex-row items-center justify-between">
-                    <!-- Título da Dashboard -->
-                    <h1 class="text-md font-medium text-gray-500 mb-4 md:mb-0">Dashboard - Principal</h1>
-                
-                    <!-- Ticker de Criptomoedas (Visível apenas em telas grandes) -->
-                    <div class="lg:flex hidden w-full md:w-auto justify-center lg:justify-start">
-                        <div class="flex items-center space-x-20 overflow-x-auto">
-                            @if (isset($cryptoPrices) && $cryptoPrices->isNotEmpty())
-                            @foreach ($cryptoPrices as $crypto)
-                            <div class="flex items-center text-xs font-medium">
-                                <!-- Logo da Cripto -->
-                                <img src="/images/cripto-logos/{{ strtoupper($crypto->crypto_symbol) }}.png" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
-                                <!-- Valorização/Desvalorização -->
-                                @if ($crypto->change_pct_24h !== null)
-                                @if ($crypto->change_pct_24h > 0)
-                                <span class="text-green-500 font-semibold">R$ {{ number_format($crypto->price_in_brl, 2, ',', '.') }}</span>
-                                <!-- Exibe o ícone de alta com cor verde -->
-                                <span class="text-green-500 ml-2">
-                                    <i class="fas fa-arrow-up"></i> +{{ number_format($crypto->change_pct_24h, 2) }}%
-                                </span>
-                                @else
-                                <!-- Exibe o ícone de queda com cor vermelha -->
-                                <span class="text-red-500 font-semibold">R$ {{ number_format($crypto->price_in_brl, 2, ',', '.') }}</span>
-                                <span class="text-red-500 ml-2">
-                                    <i class="fas fa-arrow-down"></i> {{ number_format($crypto->change_pct_24h, 2) }}%
-                                </span>
-                                @endif
-                                @endif
-                            </div>
-                            @endforeach
-                            @else
-                            <!-- Caso não haja criptomoedas disponíveis -->
-                            <div class="text-gray-500">Preços de criptomoedas indisponíveis</div>
-                            @endif
-                        </div>
-                    </div>
-                
-                    <!-- Informações do Usuário (Visível apenas em telas médias e maiores) -->
-                    <div class="md:flex items-center gap-4 hidden">
-                        <!-- Informações do Usuário -->
-                        <div class="flex flex-col items-center md:items-end text-center md:text-right">
-                            <span class="text-sm font-bold">{{ auth()->user()->name }}</span>
-                            <span class="text-xs">Usuário</span>
-                        </div>
-                
-                        <!-- Foto do Perfil do Usuário -->
-                        <div>
-                            <img src="{{ auth()->user()->profile_photo_url }}" alt="Foto do Perfil" class="h-12 w-12 rounded-full">
-                        </div>
-                    </div>
-                </header>
+               <!-- Header -->
+<header class="mb-6 bg-white p-4 rounded-lg flex flex-col md:flex-row items-center justify-between">
+    <!-- Título da Dashboard -->
+    <h1 class="text-md font-medium text-gray-500 mb-4 md:mb-0">Dashboard</h1>
+
+    <!-- Ticker de Criptomoedas (Visível apenas em telas grandes) -->
+    <div class="w-full lg:w-auto lg:flex hidden justify-center lg:justify-start overflow-x-auto">
+        <div class="flex items-center space-x-8">
+            @if (isset($cryptoPrices) && $cryptoPrices->isNotEmpty())
+            @foreach ($cryptoPrices as $crypto)
+            <div class="flex items-center text-xs font-medium">
+                <!-- Logo da Cripto -->
+                <img src="/images/cripto-logos/{{ strtoupper($crypto->crypto_symbol) }}.png" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
+                <!-- Valorização/Desvalorização -->
+                @if ($crypto->change_pct_24h !== null)
+                @if ($crypto->change_pct_24h > 0)
+                <span class="text-green-500 font-semibold">R$ {{ number_format($crypto->price_in_brl, 2, ',', '.') }}</span>
+                <span class="text-green-500 ml-2">
+                    <i class="fas fa-arrow-up"></i> +{{ number_format($crypto->change_pct_24h, 2) }}%
+                </span>
+                @else
+                <span class="text-red-500 font-semibold">R$ {{ number_format($crypto->price_in_brl, 2, ',', '.') }}</span>
+                <span class="text-red-500 ml-2">
+                    <i class="fas fa-arrow-down"></i> {{ number_format($crypto->change_pct_24h, 2) }}%
+                </span>
+                @endif
+                @endif
+            </div>
+            @endforeach
+            @else
+            <!-- Caso não haja criptomoedas disponíveis -->
+            <div class="text-gray-500">Preços de criptomoedas indisponíveis</div>
+            @endif
+        </div>
+    </div>
+
+    <!-- Informações do Usuário (Visível em telas médias e maiores) -->
+    <div class="md:flex items-center gap-4 hidden">
+        <!-- Informações do Usuário -->
+        <div class="flex flex-col items-center md:items-end text-center md:text-right">
+            <span class="text-sm font-bold">{{ auth()->user()->name }}</span>
+            <span class="text-xs">Usuário</span>
+        </div>
+
+        <!-- Foto do Perfil do Usuário -->
+        <div>
+            <img src="{{ auth()->user()->profile_photo_url }}" alt="Foto do Perfil" class="h-12 w-12 rounded-full">
+        </div>
+    </div>
+
+    <!-- Informações do Usuário para dispositivos móveis -->
+    <div class="flex hidden lg:hidden items-center gap-2 mt-4">
+        <img src="{{ auth()->user()->profile_photo_url }}" alt="Foto do Perfil" class="h-10 w-10 rounded-full">
+        <div class="flex flex-col text-center md:text-right">
+            <span class="text-sm font-bold">{{ auth()->user()->name }}</span>
+            <span class="text-xs">Usuário</span>
+        </div>
+    </div>
+</header>
+
                                       
 
                 <!-- Slot de Conteúdo -->   
-                <div class="rounded-lg p-6">
+                <div class="rounded-lg p-4">
                     {{ $slot }}
                 </div>
             </div>
