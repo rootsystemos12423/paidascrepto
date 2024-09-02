@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+.w-350 {
+    width: 350px;
+}
+
+.h-250 {
+ height: 250px;
+}
+
+.top-c1 {
+    top: -10px;
+}
