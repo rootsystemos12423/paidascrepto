@@ -76,7 +76,7 @@
 
         <div class="rounded-xl mb-8 w-full mt-4">
             <h3 class="text-2xl font-semibold text-gray-800 mb-4">Saldo do Usuário</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2">
                 <!-- BTC -->
                 <div class="flex items-center border border-gray-200 p-6 space-x-4 rounded-xl shadow-sm bg-gray-50">
                     <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.png" alt="BTC Logo">
