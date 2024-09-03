@@ -51,7 +51,7 @@
                         <thead class="bg-gray-100">
                             <tr>
                                 <th class="px-4 py-2">Máquina</th>
-                                <th class="px-4 py-2">Hash Rate (Por cota)</th>
+                                <th class="px-4 py-2">Hashrate</th>
                                 <th class="px-4 py-2">Algoritmo</th>
                                 <th class="px-4 py-2">Status</th>
                             </tr>
