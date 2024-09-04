@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Cookie;
 
 use App\Services\CryptoCurrencyService;
 use App\Http\Controllers\CotacaoController;
+use App\Http\Controllers\ExchangeController;
 
 
 /*
@@ -139,6 +140,11 @@ Route::middleware([
             Route::post('/adcionar/order', [MachineController::class, 'createOrderAdicionar'])->name('maquinas.buy');
             Route::post('/upgrade/buy', [MachineController::class, 'createOrderUpgrade'])->name('maquinas.upgradeBuy');
             Route::post('/machines/store', [DashboardController::class, 'maquinaFicticiastore'])->name('machines.ficticia');
+        });
+
+        Route::group(['prefix' => 'exchange'], function () {
+            Route::get('/main', [ExchangeController::class, 'index'])->name('exchange.main');
+            Route::post('/convert', [ExchangeController::class, 'convertCrypto'])->name('exchange.convertCrypto');
         });
 
         Route::group(['prefix' => 'afiliacao'], function () {

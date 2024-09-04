@@ -30,7 +30,7 @@
                 <img class="w-11" src="/images/logo.png" alt="">
                 <div class="flex justify-around items-center">
                     <a class="mr-4 text-lg" href="{{ route('login') }}">Login</a>
-                    <a class="p-2 text-center px-6 bg-blue-600 text-white text-md font-medium rounded-full" href="#">Adquirir Cotas</a>
+                    <a class="p-2 text-center px-6 bg-blue-600 text-white text-md font-medium rounded-full" href="#buy" id="scrollToBuy">Adquirir Cotas</a>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
     </div>
     
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
+        <a href="#buy" id="scrollToBuy" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
     </div>
     
 
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <div x-data="cryptoSelector()" x-init="init()" class="bg-gray-100 py-12">
+    <div id="buy" x-data="cryptoSelector()" x-init="init()" class="bg-gray-100 py-12">
         <div class="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8">
             <h2 class="text-3xl font-bold text-center text-gray-800">Calculadora de cotas personalizadas</h2>
             <p class="text-center text-gray-600 mt-2">Escolha a criptomoeda e a máquina que você deseja adquirir sua cota</p>
@@ -228,7 +228,7 @@
     </div>
 
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
+        <a href="#buy" id="scrollToBuy" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
     </div>
 
     <div class="bg-gray-200 text-white p-8 flex flex-col items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
@@ -263,7 +263,7 @@
     </div>
 
     <div class="w-full flex justify-center p-6">
-        <a href="#" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
+        <a href="#buy" id="scrollToBuy" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
     </div>
     
 
@@ -352,6 +352,7 @@
     </footer>
     
 
+    
 
 <script>
     document.querySelectorAll('.faq-title').forEach(item => {
@@ -368,6 +369,17 @@
             }
         });
     });
+
+    document.querySelectorAll('#scrollToBuy').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+        e.preventDefault(); // Evita o comportamento padrão do link
+
+        document.querySelector('#buy').scrollIntoView({
+            behavior: 'smooth' // Efeito de rolagem suave
+        });
+    });
+});
+
 </script>
     
 <script>
