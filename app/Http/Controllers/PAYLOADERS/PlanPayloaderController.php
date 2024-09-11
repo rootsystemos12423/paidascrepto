@@ -95,14 +95,14 @@ class PlanPayloaderController extends Controller
 {
     // Decodifica a descrição para obter o nome do plano.
     $description = json_decode($checkout->description, true);
-    $maquinas = $description->quantidade;
+    $maquinas = $description['quantidade'];
     $level = 0;
-    $machine = CriptoMachine::where('Name', $description->modelo);
+    $machine = CriptoMachine::where('Name', $description['modelo'])->first();
 
     // Atribui máquinas ao usuário com base no plano.
     for ($i = 0; $i < $maquinas; $i++) {
         // Aqui você precisa definir como uma nova máquina é criada em relação ao usuário.
-        CriptoMachine::create([
+        MachineCota::create([
             'user_id' => $user->id,
             'machine_id' => $machine->id,
             'hashrate' => $machine->hashrate * 0.01,

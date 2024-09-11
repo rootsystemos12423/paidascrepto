@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" async referrerpolicy="no-referrer" />
+    <script
+    src='//fw-cdn.com/12022705/4556207.js'
+    chat='true'>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
            .chart-container {
@@ -38,16 +42,16 @@
 
     <div class="flex flex-col items-center p-3 justify-center mt-12 w-full text-center">
         <h1 class="text-black font-bold text-2xl sm:text-4xl md:text-5xl w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 px-2">
-            Retornos de até <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">5% ao dia sobre o valor investido</span>, com esse novo ecossistema
+            RENDIMENTOS DE ATÉ <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">45% AO MÊS SOB O VALOR INVESTIDO</span>
         </h1>
         <span class="p-4 text-gray-600 text-sm sm:text-lg w-full sm:w-3/4 lg:w-1/2 xl:w-1/3">
-            Esqueça tudo que já viu no universo de criptomoedas, esse novo ecossistema te paga diariamente os rendimentos das suas criptos <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent font-bold">botando mais dinheiro no seu bolso.</span>
+            Descubra a oportunidade de transformar seu capital com retornos excepcionais <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent font-bold">Não perca a chance de estar à frente no mercado!</span>
         </span>
     </div>
     
     <div class="w-full flex justify-center p-6">
-        <div class="w-1/2">
-            <div id="vid_66e1c5ceb6fa8f000b466196" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img id="thumb_66e1c5ceb6fa8f000b466196" src="https://images.converteai.net/ab3e6fe1-1923-4e05-bbbc-1763d9a00c51/players/66e1c5ceb6fa8f000b466196/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> <div id="backdrop_66e1c5ceb6fa8f000b466196" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> </div> <script type="text/javascript" id="scr_66e1c5ceb6fa8f000b466196"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/ab3e6fe1-1923-4e05-bbbc-1763d9a00c51/players/66e1c5ceb6fa8f000b466196/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
+        <div class="lg:w-1/2 w-full">
+            <div id="vid_66e1e7cb21ae9b000bbb2205" style="position:relative;width:100%;padding: 56.25% 0 0;"> <img id="thumb_66e1e7cb21ae9b000bbb2205" src="https://images.converteai.net/ab3e6fe1-1923-4e05-bbbc-1763d9a00c51/players/66e1e7cb21ae9b000bbb2205/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"> <div id="backdrop_66e1e7cb21ae9b000bbb2205" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div> </div> <script type="text/javascript" id="scr_66e1e7cb21ae9b000bbb2205"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/ab3e6fe1-1923-4e05-bbbc-1763d9a00c51/players/66e1e7cb21ae9b000bbb2205/player.js", s.async=!0,document.head.appendChild(s); </script> <style> .elementor-element:has(#smartplayer) { width: 100%; } </style>
         </div>
     </div>
     
@@ -313,7 +317,7 @@
                 <!-- Total Minerado -->
                 <div class="p-8 bg-gray-200 rounded-lg shadow-lg text-center">
                     <span class="text-7xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                        50M+
+                        100M+
                     </span>
                     <p class="text-gray-900 font-bold mt-4 uppercase tracking-wide">
                         Total Minerado (R$)

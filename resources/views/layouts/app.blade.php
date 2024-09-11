@@ -6,6 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+        <script
+        src='//fw-cdn.com/12022705/4556207.js'
+        chat='true'>
+        </script>
         <title>Osorno Crypto - O melhor site de mineração do Brasil</title>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
