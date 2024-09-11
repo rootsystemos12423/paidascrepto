@@ -17,6 +17,8 @@ use App\Models\Afiliados;
 use App\Models\Referral;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
+use App\Models\MachineCota;
+use App\Models\CriptoMachine;
 
 
 class PlanPayloaderController extends Controller
@@ -80,6 +82,7 @@ class PlanPayloaderController extends Controller
         $user = new User;
         $user->name = $checkout->nome;
         $user->email = $checkout->email;
+        $user->telefone = $checkout->telefone;
         $user->username = $username;
         $user->password = bcrypt($password);
         $user->email_verified_at = now();
@@ -92,78 +95,22 @@ class PlanPayloaderController extends Controller
 {
     // Decodifica a descrição para obter o nome do plano.
     $description = json_decode($checkout->description, true);
-    $plano = $description['plan']['name'];
-    $maquinas = 0;
+    $maquinas = $description->quantidade;
     $level = 0;
-
-    // Atribui valores baseados no plano.
-    switch ($plano) {
-        case 'Shark':
-        case 'Shark 20% OFF': 
-            $maquinas = 4;
-            $level = 3;
-            $user->assignRole('shark');
-            break;
-        case 'Lion':
-            $maquinas = 3;
-            $level = 2;
-            $user->assignRole('lion');
-            break;
-        case 'Bear':
-            $maquinas = 2;
-            $level = 2;
-            $user->assignRole('bear');
-            break;
-        default:
-            throw new \Exception('Plano não encontrado');
-    }
+    $machine = CriptoMachine::where('Name', $description->modelo);
 
     // Atribui máquinas ao usuário com base no plano.
     for ($i = 0; $i < $maquinas; $i++) {
         // Aqui você precisa definir como uma nova máquina é criada em relação ao usuário.
-        // Este é apenas um exemplo e você deve ajustá-lo conforme seu modelo de dados.
-        $user->miningMachines()->create([
-            'level' => $level,
+        CriptoMachine::create([
+            'user_id' => $user->id,
+            'machine_id' => $machine->id,
+            'hashrate' => $machine->hashrate * 0.01,
+            'hashrate_type' => $machine->hashrate_type,
         ]);
+
     }
 
-}
-
-private function handleReferral($user, $referralCode, $checkout)
-{
-    $referrer = Afiliados::where('codigo_afiliado', $referralCode)->first();
-    if ($referrer) {
-        $description = json_decode($checkout->description, true);
-        $plano = $description['plan']['name'];
-        $desc = 0;
-
-        // Determina o nível da máquina com base no plano do indicado
-        switch ($plano) {
-            case 'Shark':
-            case 'Shark 20% OFF': 
-                $desc = 'rec3';
-                break;
-            case 'Lion':
-                $desc = 'rec2';
-                break;
-            case 'Bear':
-                $desc = 'rec1';
-                break;
-            default:
-                throw new \Exception('Plano não encontrado');
-        }
-
-        // Criar uma máquina para o referenciador com base no nível determinado
-        $referrerUser = User::find($referrer->user_id);
-        if ($referrerUser) {
-            $referral = new Referral;
-            $referral->affiliate_code_id = $referralCode;
-            $referral->referred_user_id = $user->id;
-            $referral->reffer_status = 'Unclaimed';
-            $referral->item_purchased = $desc;
-            $referral->save();
-        }
-    }
 }
 
 

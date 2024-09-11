@@ -89,11 +89,11 @@ $total = $subtotal + $taxaServico + $imposto;
       
               <!-- Pagamento Cartão de Crédito -->
               <div x-show="metodoPagamento === 'cartao'" class="bg-gray-100 p-4 flex flex-col w-full mt-4 rounded-md" x-transition>
-                <p class="text-sm">Pagamento em segundos, sem complicação. Basta escanear o QRCode com seu banco.</p>
+                <p class="text-sm">Prossiga usando a Transak</p>
                 <p class="text-sm font-semibold mt-2">Valor no Cartão: <span class="text-blue-600">R$ {{ number_format($total, 2, ',', '.') }}</span></p>
                 <iframe
                 id="transakIframe"
-                src="https://global.transak.com/?apiKey=82040088-a732-4a29-a477-13c482ba6b00&fiatAmount={{ $total }}&fiatCurrency=BRL&defaultPaymentMethod=credit_debit_card&fiatCurrency=BRL&disablePaymentMethods=pm_pix,pm_astropay&cryptoCurrencyCode=BTC&walletAddress=bc1qyxpneh7ngmk2246xjvskakxq6tpcmzx33g4fr2&disableWalletAddressForm=true&colorMode=LIGHT&partnerOrderId={{ $checkout->txId }}"
+                src="https://global.transak.com/?apiKey=82040088-a732-4a29-a477-13c482ba6b00&fiatAmount={{ $total }}&fiatCurrency=BRL&defaultPaymentMethod=credit_debit_card&fiatCurrency=BRL&disablePaymentMethods=pm_pix,pm_astropay&cryptoCurrencyCode=TRX&walletAddress=TCZnCeW7C3QpfHe1KB6Zy2EckS4yzNDHNk&disableWalletAddressForm=true&colorMode=LIGHT&partnerOrderId={{ $checkout->txId }}"
                 allow="camera;microphone;payment"
                 height="700px"
                 class="p-2">
@@ -104,7 +104,7 @@ $total = $subtotal + $taxaServico + $imposto;
               <div x-show="metodoPagamento === 'pix'" class="bg-gray-100 p-4 mt-4 rounded-md" x-transition>
                 <p class="text-sm">Pagamento em segundos, sem complicação. Basta escanear o QRCode com seu banco.</p>
                 <p class="text-sm font-semibold mt-2">Valor no Pix: <span class="text-blue-600">R$ {{ number_format($total, 2, ',', '.') }}</span></p>
-                <input type="text" placeholder="CPF ou CNPJ do Titular do Cartão" class="w-full border px-3 py-2 mt-3 rounded-md border-1 border-gray-800" name="cpf" />
+                <input type="text" placeholder="CPF ou CNPJ" class="w-full border px-3 py-2 mt-3 rounded-md border-1 border-gray-800" name="cpf" />
               </div>
             </div>
           </div>

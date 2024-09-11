@@ -7,6 +7,7 @@ use App\Models\Balance;
 use App\Models\CryptoPrice;
 
 
+
 class ExchangeController extends Controller
 {
     public function index(){

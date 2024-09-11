@@ -18,61 +18,59 @@ class UpdateMiningBalances extends Command
         // 1. Recupera todas as máquinas de mineração
         $machines = CriptoMachine::all();
 
+        $dolar = CryptoPrice::where('crypto_symbol', 'USDT')->first();
+    
         // 2. Itera sobre cada máquina de mineração
         foreach ($machines as $machine) {
             // Obtemos o tipo de algoritmo e o lucro de mineração em dólares
             $algorithm = $machine->Algorithm;
             $miningProfitInDollars = $machine->mining_profit;
-
+    
             // Recupera a taxa de câmbio da criptomoeda
             $cryptoSymbol = $this->mapAlgorithmToCryptoSymbol($algorithm);
             $cryptoPriceInBrl = $this->getCryptoPriceInBrl($cryptoSymbol);
-
+    
             // Converte o lucro de mineração de dólares para BRL
-            $profitInBrl = $miningProfitInDollars * 5.40 / $cryptoPriceInBrl;
-
-            // Calcula o valor minerado total para ser distribuído (0.28% do lucro de mineração)
-            $totalProfitToDistribute = $profitInBrl * 0.0028;
-
+            $profitInBrl = $miningProfitInDollars * $dolar->price_in_brl / $cryptoPriceInBrl * 0.01 / 24;
+    
             // 3. Encontrar todas as cotas de máquinas associadas com base no tipo de criptomoeda
             $machineCotas = MachineCota::where('machine_id', $machine->id)->get();
-
-            // 5. Iterar sobre cada grupo de cotas por usuário
-            foreach ($machineCotas as $userId => $cotas) {
-
-                // Calcula a parte proporcional do usuário com base no hashrate
-                $userProfit = $totalProfitToDistribute * 24;
-
-                // 6. Atualizar o saldo do usuário com base na criptomoeda
+    
+            // 4. Iterar sobre cada grupo de cotas por usuário
+            foreach ($machineCotas as $cota) {
+                $userId = $cota->user_id;
+                $userQuantity = $cota->cotas;
+    
+                // 5. Atualizar o saldo do usuário com base na criptomoeda
                 $balance = Balance::where('user_id', $userId)->first();
-
+    
                 if ($balance) {
                     switch ($cryptoSymbol) {
                         case 'BTC':
-                            $balance->balance_btc += $userProfit;
+                            $balance->balance_btc += $profitInBrl;
                             break;
                         case 'ALPH':
-                            $balance->balance_alph += $userProfit;
+                            $balance->balance_alph += $profitInBrl;
                             break;
                         case 'KAS':
-                            $balance->balance_kaspa += $userProfit;
+                            $balance->balance_kaspa += $profitInBrl;
                             break;
                         case 'LTC':
-                            $balance->balance_ltc += $userProfit;
+                            $balance->balance_ltc += $profitInBrl;
                             break;
                         default:
                             $this->error("Símbolo de criptomoeda desconhecido: {$cryptoSymbol}");
                             continue 2; // Pular para a próxima máquina de mineração
                     }
-
+    
                     // Salva as alterações no saldo do usuário
                     $balance->save();
                 }
             }
         }
-
+    
         $this->info('Atualização das máquinas e saldos realizada com sucesso!');
-    }
+    }    
 
     private function mapAlgorithmToCryptoSymbol($algorithm)
     {

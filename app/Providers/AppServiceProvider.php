@@ -29,6 +29,9 @@ class AppServiceProvider extends ServiceProvider
             $cryptoPrices = CryptoPrice::all()->keyBy('crypto_symbol'); // Recupera os preços de todas as criptos
             $view->with('cryptoPrices', $cryptoPrices); // Compartilha com todas as views
         });
-
+        View::composer('*', function ($view) {
+            $dolarPrice = CryptoPrice::where('crypto_symbol', 'USDT')->first(); // Recupera os preços de todas as criptos
+            $view->with('dolarPrice', $dolarPrice); // Compartilha com todas as views
+        });
     }
 }

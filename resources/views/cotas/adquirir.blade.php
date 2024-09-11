@@ -6,7 +6,7 @@
         
                 <form action="{{ route('checkout.createOrder') }}" method="POST">
                     @csrf
-                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Coluna 1: Seleção de ASIC -->
                         <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
                             <label class="block text-gray-700 font-semibold mb-2" for="fornecedor">Criptomoedas</label>
@@ -49,32 +49,15 @@
                                     <li><i class="fas fa-clock"></i> 100% de tempo de atividade</li>
                                 </ul>
                             </div>
+                            <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 mt-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Obtenha um plano personalizado</button>
                         </div>
                         
                         <input type="hidden" name="valor" x-bind:value="cotaValue">
-    
-                        <!-- Coluna 3: Informações de Contato -->
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <label class="block text-gray-700 font-semibold mb-2" for="contato">Por</label>
-                            <select id="contato" name="contato" class="w-full bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                <option>Whatsapp</option>
-                                <!-- Outras opções -->
-                            </select>
-        
-                            <label class="block text-gray-700 font-semibold mt-4 mb-2" for="lingua">Falo</label>
-                            <select id="lingua" name="lingua" class="w-full bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                <option>Português</option>
-                                <!-- Outras opções -->
-                            </select>
-        
-                            <label class="block text-gray-700 font-semibold mt-4 mb-2" for="telefone">Número de telefone</label>
-                            <input id="telefone" name="telefone" type="text" value="{{ auth()->user()->telefone }}" class="w-full bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Seu número de telefone" readonly>
-                            
-                            <label class="block text-gray-700 font-semibold mt-4 mb-2" for="email">Seu melhor email</label>
-                            <input id="email" name="email" value="{{ auth()->user()->email }}" type="text" class="w-full bg-white border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Seu melhor email" readonly>
-                             
-                            <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 mt-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Obtenha um plano personalizado</button>
-                        </div>
+                        <input type="hidden" name="lingua" value="Português">
+                        <input type="hidden" name="contato" value="Whatsapp">
+                        <input type="hidden" name="telefone" value="{{ auth()->user()->telefone }}">
+                        <input type="hidden" name="email" value="{{ auth()->user()->email }}">
+
                     </div>
                 </form>
             </div>
@@ -117,14 +100,17 @@
         
                     async updateValues() {
                         const selected = this.machines.find(machine => machine.Name === this.selectedMachine);
+                        
                         if (selected) {
                             const machineValue = parseFloat(selected.value);
-                            // Atualiza o valor da cota baseado no valor da máquina e na quantidade
-                            this.cotaValue = this.formatCurrency(machineValue * 0.0066 * this.quantity);
-        
-                            // Multiplicar mining_profit por 5,30 e depois multiplicar pelo quantity
                             const miningProfit = parseFloat(selected.mining_profit);
-                            this.miningOutput = this.formatCurrency(miningProfit * 5.40 * this.quantity * 0.0123 * 30);
+                            const dolarPrice = {{ $dolarPrice->price_in_brl }};  // Defina o valor atual do dólar aqui, ou obtenha de uma fonte externa
+                            
+                            // Atualiza o valor da cota baseado no valor da máquina e na quantidade
+                            this.cotaValue = this.formatCurrency(machineValue * 0.006 * this.quantity);
+                            
+                            // Converte o lucro de mineração de dólares para BRL com a lógica ajustada para 1% por mês, dividido por 24 dias
+                            this.miningOutput = this.formatCurrency((miningProfit * dolarPrice * 0.01 * 30) * this.quantity);
                         } else {
                             this.cotaValue = 'R$0,00';
                             this.miningOutput = 'R$0,00';

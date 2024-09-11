@@ -15,7 +15,6 @@ use App\Models\TransactionHistory;
 use App\Models\MachineCota;
 use App\Models\MachineFicticia;
 
-
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
