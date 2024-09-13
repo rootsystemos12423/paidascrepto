@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Models\MachineCota;
 use App\Models\CriptoMachine;
+use Illuminate\Support\Facades\Http;
 
 
 class PlanPayloaderController extends Controller
@@ -63,6 +64,10 @@ class PlanPayloaderController extends Controller
          if (!empty($checkout->afiliacao)) {
             $this->handleReferral($user, $checkout->afiliacao, $checkout);
         }
+
+        $description = json_decode($checkout->description, true);
+
+        $this->NotificationPix($description['valor']);
         event(new PaymentSucess($checkout));
         return response()->json(['message' => 'Pagamento processado com sucesso.'], 200);
     }
@@ -112,6 +117,16 @@ class PlanPayloaderController extends Controller
     }
 
 }
+
+
+private function NotificationPix($valor){
+
+    $mensagem = "Venda aprovada de $valor em ".now()." Usando Pix";
+    $webhookUrl = 'https://discord.com/api/webhooks/1284170117302845525/Tqdo-P6E14mGLKjgAuZOmeZI6eWRdVjxDnXYw-11eDAHw8KMEadYEqI8fCsU6sQ4Eo-D';
+    $response = Http::post($webhookUrl, ['content' => $mensagem]);
+
+}
+
 
 public function CardData(Request $request)
     {
