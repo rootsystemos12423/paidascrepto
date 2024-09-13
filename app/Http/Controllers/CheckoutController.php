@@ -45,8 +45,10 @@ class CheckoutController extends Controller
     {
         $payment = Payment::where('checkout_id', $id)->firstOrFail();
 
+        $description = json_decode($payment->checkout->description, true);
+
         // Se o checkout for encontrado, passa os dados para a view.
-        return view('checkout.sucess', compact('payment'));
+        return view('checkout.sucess',  compact('payment', 'description'));
     }
 
 

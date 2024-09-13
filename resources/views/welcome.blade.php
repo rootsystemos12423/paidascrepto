@@ -14,6 +14,16 @@
     src='//fw-cdn.com/12022705/4556207.js'
     chat='true'>
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16701155888">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16701155888');
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
            .chart-container {
