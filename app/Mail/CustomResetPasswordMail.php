@@ -28,7 +28,7 @@ class CustomResetPasswordMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'REDEFINIÇÃO DE SENHA - AURORA MINER',
+            subject: 'REDEFINIÇÃO DE SENHA - OSORNO CRYPTO',
         );
     }
 

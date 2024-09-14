@@ -31,7 +31,7 @@ class PurchaseConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Aurora Miner -  Compra Aprovada',
+            subject: 'Osorno Crypto -  Compra Aprovada',
         );
     }
 

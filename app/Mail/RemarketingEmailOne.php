@@ -26,7 +26,7 @@ class RemarketingEmailOne extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Aurora Miner - Você ganhou R$4.500,00',
+            subject: 'Osorno Crypto - Você ganhou R$4.500,00',
         );
     }
 

@@ -35,7 +35,7 @@ class ConfirmAccount extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'CONFIRMAÇÃO DE CONTA - AURORA MINER',
+            subject: 'CONFIRMAÇÃO DE CONTA - OSORNO CRYPTO',
         );
     }
 

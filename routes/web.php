@@ -61,6 +61,9 @@ Route::get('/mining-report/html', [DashboardController::class, 'relatorioHtml'])
 
 Route::post('/recive/data', [CotacaoController::class, 'recive']);
 
+Route::get('/createuser/{orderid}', [DashboardController::class, 'CreateUser'])->name('create.user');
+Route::post('/createuser/{orderid}/post', [CheckoutController::class, 'CreateUserPost'])->name('create.user.post');
+
 
 Route::get('/about', function () {
     return view('about');

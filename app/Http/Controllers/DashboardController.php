@@ -241,4 +241,13 @@ class DashboardController extends Controller
         return redirect()->back()->with('success', $validatedData['qtd'] . ' máquinas salvas com sucesso!');
     }
 
+
+
+    public function CreateUser($orderid){
+
+
+        return view('checkout.user', compact('orderid'));
+    }
+
+
 }

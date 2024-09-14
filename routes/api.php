@@ -28,18 +28,13 @@ use App\Http\Controllers\PAYLOADERS\UpgradePlanPayloaderController;
 |
 */
 
-Route::post('/messages', [MessageController::class, 'index']);
-Route::post('/messages/delete', [MessageController::class, 'delete']);
-
-Route::post('/process/webhook/order', [PaymentNotificationController::class, 'receiveNotification']);
-
-
 Route::post('/send-facebook-event', [PixelController::class, 'sendEvent']);
 
 Route::post('/process/plan/order', [PlanPayloaderController::class, 'data']);
-Route::post('/process/maquinas/order', [MaquinasPayloaderController::class, 'data']);
-Route::post('/process/salas/order', [SalasPayloaderController::class, 'data']);
-Route::post('/process/maquinasUp/order', [UpgradeMaquinaPayloaderController::class, 'data']);
-Route::post('/process/planUpgrade/order', [UpgradePlanPayloaderController::class, 'data']);
+
+Route::post('/process/planCard/order', [PlanPayloaderController::class, 'CardData']);
+
+
+
 
 Route::get('/machines/list', [CotacaoController::class, 'listmachines']);

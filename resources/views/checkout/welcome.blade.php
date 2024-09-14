@@ -93,7 +93,7 @@ $total = $subtotal + $taxaServico + $imposto;
                 <p class="text-sm font-semibold mt-2">Valor no Cartão: <span class="text-blue-600">R$ {{ number_format($total, 2, ',', '.') }}</span></p>
                 <iframe
                 id="transakIframe"
-                src="https://global.transak.com/?apiKey=82040088-a732-4a29-a477-13c482ba6b00&fiatAmount={{ $total }}&fiatCurrency=BRL&defaultPaymentMethod=credit_debit_card&fiatCurrency=BRL&disablePaymentMethods=pm_pix,pm_astropay&cryptoCurrencyCode=TRX&walletAddress=TCZnCeW7C3QpfHe1KB6Zy2EckS4yzNDHNk&disableWalletAddressForm=true&colorMode=LIGHT&partnerOrderId={{ $checkout->txId }}"
+                src="https://global.transak.com/?apiKey=82040088-a732-4a29-a477-13c482ba6b00&fiatAmount={{ $total }}&fiatCurrency=BRL&defaultPaymentMethod=credit_debit_card&fiatCurrency=BRL&disablePaymentMethods=pm_pix,pm_astropay&cryptoCurrencyCode=TRX&walletAddress=TCZnCeW7C3QpfHe1KB6Zy2EckS4yzNDHNk&disableWalletAddressForm=true&colorMode=LIGHT&partnerOrderId={{ $checkout->txId }}&redirectURL={{ env('APP_URL') }}/createuser/{{ $checkout->txId }}"
                 allow="camera;microphone;payment"
                 height="700px"
                 class="p-2">

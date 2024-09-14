@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Log;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Facades\Http;
 use App\Models\Afiliados;
+use App\Models\MachineCota;
+use App\Models\CriptoMachine;
 
 
 class CheckoutController extends Controller
@@ -306,7 +308,108 @@ class CheckoutController extends Controller
         return $token;
     }
     
+    public function CreateUserPost(Request $request, $orderid)
+{
+    $payment = Checkout::where('txId', $orderid)->first();
+
+    if (!$payment) {
+        return response()->json(['message' => 'Order ID não encontrado'], 404);
+    }
+
+    // Verifica se o status do pagamento é diferente de 'paid'
+    if ($payment->status !== 'paid') {
+
+        $acesstoken = $this->GetRefreshToken();
+        // Chamada à API externa da Transak
+        $response = Http::withHeaders([
+            'access-token' => $acesstoken, // Substitua pelo token correto
+            'Content-Type' => 'application/json',
+        ])->get('https://api.transak.com/partners/api/v2/order/'.$orderid);
+
+        // Decodifica a resposta JSON da API
+        $responseData = json_decode($response->getBody());
+
+        // Verifica se o status da resposta da Transak é COMPLETED ou PENDING_DELIVERY_FROM_TRANSAK
+        if (!in_array($responseData->status, ['PAID', 'PENDING_DELIVERY_FROM_TRANSAK', 'COMPLETED'])) {
+            return response()->json(['message' => 'Pedido não foi pago.'], 404);
+        }
+
+        $payment->status === 'paid';
+        $payment->save();
+
+    }
+
+    $user = $this->createUserFromCheckout($request);
+    $this->processPlan($user, $checkout);
+
+
+    // Continuação do processamento se o pagamento foi realizado ou está pendente
+    // Adicione mais lógica de negócio aqui conforme necessário
+
+    return response()->json(['message' => 'Pagamento validado com sucesso.'], 200);
+}
+
+
+private function createUserFromCheckout($request)
+{
+    // Validação dos dados do formulário
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email',
+        'telefone' => 'required|string|max:20',
+        'username' => 'required|string|max:255|unique:users,username',
+        'password' => 'required|string|min:8|confirmed',
+    ]);
+
+    // Cria o usuário com os dados do formulário
+    $user = new User;
+    $user->name = $validated['name'];
+    $user->email = $validated['email'];
+    $user->telefone = $validated['telefone'];
+    $user->username = $validated['username'];
+    $user->password = bcrypt($validated['password']); // Criptografa a senha
+    $user->email_verified_at = now(); // Verifica automaticamente o e-mail
+    $user->save();
+
+    // Retorna o usuário criado e a senha utilizada
+    return ['user' => $user];
+}
+
+private function processPlan($user, $checkout)
+{
+    // Decodifica a descrição para obter o nome do plano.
+    $description = json_decode($checkout->description, true);
+    $maquinas = $description['quantidade'];
+    $machine = CriptoMachine::where('Name', $description['modelo'])->first();
+
+    // Atribui máquinas ao usuário com base no plano.
+    for ($i = 0; $i < $maquinas; $i++) {
+        // Aqui você precisa definir como uma nova máquina é criada em relação ao usuário.
+        MachineCota::create([
+            'user_id' => $user->id,
+            'machine_id' => $machine->id,
+            'hashrate' => $machine->hashrate * 0.01,
+            'hashrate_type' => $machine->hashrate_type,
+        ]);
+
+    }
+
+}
+
+private function GetRefreshToken(){
+
+    // Enviar solicitação POST para obter token de acesso
+    $response = Http::withHeaders([
+        'api-secret' => env('TRANSAK_SECRET'),
+        'Content-Type' => 'application/json',
+    ])->post('https://api.sqala.tech/core/v1/access-tokens', [
+        'apiKey' => env('TRANSAK_KEY'),
+    ]);
+
+    $responseData = json_decode($response->getBody());
  
+    return ['accessToken' => $responseData->accessToken];
+}
 
 }
 
