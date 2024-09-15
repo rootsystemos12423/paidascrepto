@@ -13,6 +13,15 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16701155888">
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10798544488">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-10798544488');
+    </script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -23,6 +32,14 @@
     <script>
         gtag('event', 'conversion', {
             'send_to': 'AW-16701155888/5MBoCIq9t9IZELDU3Zs-',
+            'value': {{ number_format((float) str_replace('.', '', str_replace('.', '', preg_replace("/[^0-9,]/", "", $description['valor']))), 2, '.', '') }},
+            'currency': 'BRL',
+            'transaction_id': '{{ $payment->order_id }}'
+        });
+      </script>
+       <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-10798544488/nvLKCNKD_dIZEOjskp0o',
             'value': {{ number_format((float) str_replace('.', '', str_replace('.', '', preg_replace("/[^0-9,]/", "", $description['valor']))), 2, '.', '') }},
             'currency': 'BRL',
             'transaction_id': '{{ $payment->order_id }}'

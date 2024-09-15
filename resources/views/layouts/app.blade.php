@@ -20,6 +20,15 @@
 
         gtag('config', 'AW-16701155888');
         </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10798544488">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'AW-10798544488');
+        </script>
         <title>Osorno Crypto - O melhor site de mineração do Brasil</title>
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
