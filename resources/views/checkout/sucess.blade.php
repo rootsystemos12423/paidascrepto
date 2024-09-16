@@ -10,41 +10,25 @@
     <title>Agradecimento pelo Pagamento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16701155888">
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10798544488">
+    @foreach ($tags as $tag)
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
     </script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'AW-10798544488');
-    </script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-16701155888');
-    </script>
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16701155888/5MBoCIq9t9IZELDU3Zs-',
-            'value': {{ number_format((float) str_replace('.', '', str_replace('.', '', preg_replace("/[^0-9,]/", "", $description['valor']))), 2, '.', '') }},
-            'currency': 'BRL',
-            'transaction_id': '{{ $payment->order_id }}'
-        });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', '{{ $tag->tag_id }}');
       </script>
-       <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-10798544488/nvLKCNKD_dIZEOjskp0o',
-            'value': {{ number_format((float) str_replace('.', '', str_replace('.', '', preg_replace("/[^0-9,]/", "", $description['valor']))), 2, '.', '') }},
-            'currency': 'BRL',
-            'transaction_id': '{{ $payment->order_id }}'
-        });
-      </script>
+    <script>
+          gtag('event', 'conversion', {
+              'send_to': '{{ $tag->tag_id }}/{{ $tag->token }}',
+              'value': {{ number_format((float) str_replace('.', '', str_replace('.', '', preg_replace("/[^0-9,]/", "", $description['valor']))), 2, '.', '') }},
+              'currency': 'BRL',
+              'transaction_id': '{{ $payment->order_id }}'
+          });
+    </script>
+    @endforeach
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Event snippet for COMPRA-02 conversion page -->
 </head>
