@@ -19,13 +19,12 @@ class FacebookConversionService
     {
         $pixels = Pixel::all();
         foreach ($pixels as $pixel) {
-        $url = "https://graph.facebook.com/v11.0/{$pixel->pixel_id}/events";
+        $url = "https://graph.facebook.com/{API_VERSION}/{PIXEL_ID}/events?access_token={TOKEN}";
     
             $data = [
-                'access_token' => $pixel->token,
                 'data' => [
                     [
-                        'event_name' => $eventName,
+                        'event_name' => 'Purchase',
                         'event_time' => time(),
                         'action_source' => 'website',
                         'user_data' => [
