@@ -72,14 +72,14 @@
                             <!-- Quantia a Ser Sacada -->
                             <div>
                                 <label for="amount" class="block text-sm font-medium text-gray-600">Quantia</label>
-                                <input type="number" id="amount" step="any" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="0.0" x-model="amount">
+                                <input required type="number" id="amount" step="any" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="0.0" x-model="amount">
                                 <span class="mt-2 text-xs text-gray-500">Valor em reais: R$ <span x-text="convertedAmount"></span></span>  
                             </div>
                     
                             <!-- Endereço da Carteira -->
                             <div>
                                 <label for="wallet-address" class="block text-sm font-medium text-gray-600">Endereço da Carteira</label>
-                                <input type="text" id="wallet-address" name="wallet-address" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Endereço da carteira">
+                                <input type="text" id="wallet-address" name="wallet-address" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Endereço da carteira" required>
                             </div>
                     
                             <!-- Botão para Sacar -->
@@ -100,31 +100,31 @@
                             <!-- Nome do Banco -->
                             <div>
                                 <label for="bank-name" class="block text-sm font-medium text-gray-600">Nome do Banco</label>
-                                <input type="text" id="bank-name" name="bank-name" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Ex: Banco do Brasil">
+                                <input required type="text" id="bank-name" name="bank-name" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Ex: Banco do Brasil">
                             </div>
     
                             <!-- CPF/CNPJ do Titular da Conta -->
                             <div>
                                 <label for="account-holder-cpf-cnpj" class="block text-sm font-medium text-gray-600">CPF/CNPJ do Titular da Conta</label>
-                                <input type="text" id="account-holder-cpf-cnpj" name="account-holder-cpf-cnpj" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="000.000.000-00">
+                                <input required type="text" id="account-holder-cpf-cnpj" name="account-holder-cpf-cnpj" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="000.000.000-00">
                             </div>
     
                             <!-- Agência -->
                             <div>
                                 <label for="agency-number" class="block text-sm font-medium text-gray-600">Agência</label>
-                                <input type="text" id="agency-number" name="agency-number" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="0000">
+                                <input required type="text" id="agency-number" name="agency-number" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="0000">
                             </div>
     
                             <!-- Número da Conta -->
                             <div>
                                 <label for="account-number" class="block text-sm font-medium text-gray-600">Número da Conta</label>
-                                <input type="text" id="account-number" name="account-number" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="00000-0">
+                                <input required type="text" id="account-number" name="account-number" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="00000-0">
                             </div>
     
                             <!-- Tipo de Conta -->
                             <div>
                                 <label for="account-type" class="block text-sm font-medium text-gray-600">Tipo de Conta</label>
-                                <select id="account-type" name="account-type" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <select required id="account-type" name="account-type" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                     <option>Corrente</option>
                                     <option>Poupança</option>
                                 </select>
@@ -133,7 +133,7 @@
                             <!-- Quantia a Ser Sacada -->
                             <div>
                                 <label for="amount" class="block text-sm font-medium text-gray-600">Quantia</label>
-                                <input data-id="amount" type="text" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="R$0.00">
+                                <input required data-id="amount" type="text" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="R$0.00">
                                 <span class="mt-2 text-xs text-gray-500">Valor em reais: R$0,00</span>  
                             </div>
     
@@ -155,13 +155,13 @@
                             <!-- Chave Pix -->
                             <div>
                                 <label for="pix-key" class="block text-sm font-medium text-gray-600">Chave Pix</label>
-                                <input type="text" id="pix-key" name="pix-key" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Chave Pix">
+                                <input required type="text" id="pix-key" name="pix-key" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="Chave Pix">
                             </div>
     
                             <!-- Quantia a Ser Sacada -->
                             <div>
                                 <label for="amount" class="block text-sm font-medium text-gray-600">Quantia</label>
-                                <input data-id="amount" type="text" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="R$0.00">
+                                <input required data-id="amount" type="text" name="amount" class="mt-1 bg-white block w-full pl-3 pr-10 py-2 text-base text-gray-800 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" placeholder="R$0.00">
                                 <span class="mt-2 text-xs text-gray-500">Valor em reais: R$0,00</span>  
                             </div>
     

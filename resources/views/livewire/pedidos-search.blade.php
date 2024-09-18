@@ -47,7 +47,7 @@
                                 </div>
                             @elseif($pedido->status === 'in_review')
                                 <div class="p-2 bg-yellow-100 text-yellow-600 rounded-lg">
-                                    <span>Pedente</span>
+                                    <span>Pendente</span>
                                 </div>
                             @elseif($pedido->status === 'recusado')
                                 <div class="p-2 bg-yellow-100 text-yellow-600 rounded-lg">
