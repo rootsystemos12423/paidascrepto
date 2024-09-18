@@ -41,17 +41,17 @@
                             </div>
                         </td>
                         <td class="whitespace-nowrap">
-                            @if($pedido->status === 'aprovado')
+                            @if($pedido->status === 'paid')
                                 <div class="p-2 bg-green-100 text-green-600 rounded-lg">
-                                    <span>{{ $pedido->status }}</span>
+                                    <span>Pago</span>
                                 </div>
                             @elseif($pedido->status === 'in_review')
                                 <div class="p-2 bg-yellow-100 text-yellow-600 rounded-lg">
-                                    <span>{{ $pedido->status }}</span>
+                                    <span>Pedente</span>
                                 </div>
                             @elseif($pedido->status === 'recusado')
                                 <div class="p-2 bg-yellow-100 text-yellow-600 rounded-lg">
-                                    <span>{{ $pedido->status }}</span>
+                                    <span>Recusado</span>
                                 </div>
                             @endif
                         </td>
