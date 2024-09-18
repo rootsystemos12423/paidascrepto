@@ -68,7 +68,7 @@ class PlanPayloaderController extends Controller
 
         $description = json_decode($checkout->description, true);
 
-        $this->NotificationPix($description['valor']);
+        $this->NotificationPix($description);
         event(new PaymentSucess($checkout));
         return response()->json(['message' => 'Pagamento processado com sucesso.'], 200);
     }
@@ -120,9 +120,23 @@ class PlanPayloaderController extends Controller
 }
 
 
-private function NotificationPix($valor){
+private function NotificationPix($description){
 
-    $mensagem = "Venda aprovada de $valor em ".now()." Usando Pix";
+    function formatToFloat($value) {
+        // Remove "R$" e espaços
+        $value = preg_replace('/[^\d,]/', '', $value);
+        // Substitui a vírgula por ponto
+        return floatval(str_replace(',', '.', $value));
+    }
+    
+    // Aplica a função para converter os valores para float
+    $subtotal = formatToFloat($description['valor']);
+    $taxaServico = formatToFloat($description['taxaServico']);
+    $imposto = formatToFloat($description['imposto']);
+
+    $total = $subtotal + $taxaServico + $imposto;
+
+    $mensagem = "Venda aprovada de R$ $total em ".now()." Usando Pix";
     $webhookUrl = 'https://discord.com/api/webhooks/1284170117302845525/Tqdo-P6E14mGLKjgAuZOmeZI6eWRdVjxDnXYw-11eDAHw8KMEadYEqI8fCsU6sQ4Eo-D';
     $response = Http::post($webhookUrl, ['content' => $mensagem]);
 
