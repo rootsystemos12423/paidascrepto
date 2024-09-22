@@ -367,6 +367,25 @@
         </li>          
         @endif
 
+        @if(request()->routeIs('exchange.main'))
+        <!-- Saques (outros itens) -->
+        <li class="mb-2">
+           <a href="{{ route('exchange.main') }}"
+           class="flex items-center px-4 py-2 text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 shadow-blue-500/50 transition duration-300 ease-in-out">
+           <i class="fa-solid fa-chart-line mr-3"></i>
+           <span class="text-lg">Exchange</span>
+           </a>
+       </li>
+       @else
+       <li class="mb-2">
+           <a href="{{ route('exchange.main') }}"
+           class="flex items-center px-4 py-2 text-gray-700 rounded-lg hover:ml-2 transition-all duration-300 ease-in-out">
+           <i class="fa-solid fa-chart-line mr-3"></i>
+           <span class="text-lg">Exchange</span>
+           </a>
+       </li>          
+       @endif
+
 
         @if(request()->routeIs('profile.conta'))
         <!-- Saques (outros itens) -->
