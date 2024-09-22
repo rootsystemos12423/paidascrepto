@@ -15,7 +15,6 @@
         </script>
         <script>
             kwaiq.load('258946222804614');
-            kwaiq.page();
             kwaiq.track('addToCart')
             kwaiq.track('purchase');
         </script>
