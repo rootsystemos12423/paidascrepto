@@ -16,7 +16,7 @@
           <script>
               kwaiq.load('258946222804614');
               kwaiq.page();
-              kwaiq.track('contentView');
+              kwaiq.track('addToCart');
           </script>
       </head>
 @foreach ($tags as $tag)

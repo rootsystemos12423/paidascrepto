@@ -18,7 +18,7 @@
         <script>
             kwaiq.load('258946222804614');
             kwaiq.page();
-            kwaiq.track('contentView');
+            kwaiq.track('initiatedCheckout');
         </script>
     @foreach ($tags as $tag)
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
