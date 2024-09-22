@@ -59,7 +59,7 @@
             <img src="https://aurora-miner.b-cdn.net/images/BANNER-EMAIL.png" style="width: 100%; max-width: 550px; height: auto; border-radius: 8px;">
         </div>
         <p>Olá, <strong style="color: #00ff9d;">{{ $user->name }}</strong>,</p>
-        <p>Agradecemos por se juntar à nossa comunidade! Notamos que você criou uma conta, mas ainda não experimentou nossos planos exclusivos. Estamos aqui para lembrá-lo do mundo de possibilidades que a Aurora Miners pode oferecer.</p>
+        <p>Agradecemos por se juntar à nossa comunidade! Notamos que você criou uma conta, mas ainda não experimentou nossos planos exclusivos. Estamos aqui para lembrá-lo do mundo de possibilidades que a Osorno Crypto pode oferecer.</p>
         <p style="background-color: #1f2937; color: #e5e7eb; padding: 15px; border-radius: 8px; border-left: 5px solid #00ff9d; margin: 20px 0;">
             <strong>Por que se tornar um membro ativo?</strong><br>
             - Acesso as nossas maquinas de mineração.<br>
@@ -70,7 +70,7 @@
             <a href="{{ env('APP_URL') }}/#plans" style="padding: 20px; border-radius: 15px; font-size: 3rem; font-weight: bold; color: white; background-color: #00c57a; text-decoration: none;">SAIBA MAIS DETALHES</a>
         </div>
         <p>Caso tenha alguma dúvida ou precise de assistência, estamos à disposição para ajudá-lo(a).</p>
-        <p style="text-align: center; font-size: 0.85em; color: #6b7280; margin-top: 20px;">&copy; 2024 Aurora Miners. Todos os direitos reservados.</p>
+        <p style="text-align: center; font-size: 0.85em; color: #6b7280; margin-top: 20px;">&copy; 2024 Osorno Crypto. Todos os direitos reservados.</p>
     </div>
 </body>
 </html>

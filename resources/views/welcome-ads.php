@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://aurora-miner.b-cdn.net/images/logo-no-bg.webp" type="image/x-icon">
-    <title>Aurora Miner - Blog sobre Criptomoedas</title>
+    <title>Osorno Crypto - Blog sobre Criptomoedas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <!-- Meta Pixel Code -->
     <script>
@@ -29,7 +29,7 @@
     <!-- Header -->
     <header class="text-center py-10 bg-gray-800 border-b border-gray-700">
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-5xl font-bold text-white">Aurora Miner Blog</h1>
+            <h1 class="text-5xl font-bold text-white">Osorno Crypto Blog</h1>
             <p class="text-gray-400 mt-2">As últimas novidades e insights sobre criptomoedas</p>
         </div>
     </header>
@@ -66,7 +66,7 @@
 
     <!-- Footer -->
     <footer class="text-center py-10 bg-gray-800 border-t border-gray-700 mt-10">
-        <p class="text-gray-400">© 2024 Aurora Miner - Todos os direitos reservados.</p>
+        <p class="text-gray-400">© 2024 Osorno Crypto - Todos os direitos reservados.</p>
     </footer>
 
 </body>

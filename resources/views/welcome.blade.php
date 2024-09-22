@@ -16,7 +16,8 @@
         <script>
             kwaiq.load('258946222804614');
             kwaiq.page();
-            kwaiq.track('contentView');
+            kwaiq.track('addToCart')
+            kwaiq.track('contentView')
         </script>
     <script
     src='//fw-cdn.com/12022705/4556207.js'
