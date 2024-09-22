@@ -204,7 +204,7 @@
                         <div class="text-sm text-gray-700">
                             @if ($withdrawal->status == 'pending')
                                 <span class="text-yellow-500">Pendente</span>
-                            @elseif ($withdrawal->status == 'paid')
+                            @elseif ($withdrawal->status == 'approved')
                                 <span class="text-green-500">Concluído</span>
                             @elseif ($withdrawal->status == 'refused')
                                 <span class="text-red-500">Falhou</span>
