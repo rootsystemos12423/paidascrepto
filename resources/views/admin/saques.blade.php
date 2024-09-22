@@ -51,12 +51,7 @@
                                         <a class="text-blue-500 font-bold underline" target="_blank" href="{{ route('admin.moreInfo', ['id' => $withdrawal->user->id]) }}">{{ $withdrawal->user->username }}</a>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-700">
-                                        @if($withdrawal->method === 'BTC')
-                                            {{ $withdrawal->amount }} BTC<br>
-                                            <span class="text-xs text-gray-500">
-                                                R$ {{ number_format($withdrawal->amount * $btcToBrlRate, 2, ',', '.') }}
-                                            </span>
-                                        @elseif($withdrawal->method === 'bank' || $withdrawal->method === 'pix')
+                                        @if($withdrawal->method === 'bank' || $withdrawal->method === 'pix')
                                             <span>R$ {{ number_format($withdrawal->amount, 2, ',', '.') }}</span>
                                         @else
                                             {{ $withdrawal->amount }}
