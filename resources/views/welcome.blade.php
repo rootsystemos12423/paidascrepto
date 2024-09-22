@@ -60,11 +60,11 @@
     </header>
 
     <div class="flex flex-col items-center p-3 justify-center mt-12 w-full text-center">
-        <h1 class="text-black font-bold text-2xl sm:text-4xl md:text-5xl w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 px-2">
-            RENDIMENTOS DE ATÉ <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">45% AO MÊS SOB O VALOR INVESTIDO</span>
+        <h1 class="text-black font-bold text-2xl sm:text-4xl md:text-5xl w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 px-2 uppercase">
+            É possível obter <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent">rendimento de até 45%  ao mês</span>
         </h1>
         <span class="p-4 text-gray-600 text-sm sm:text-lg w-full sm:w-3/4 lg:w-1/2 xl:w-1/3">
-            Descubra a oportunidade de transformar seu capital com retornos excepcionais <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent font-bold">Não perca a chance de estar à frente no mercado!</span>
+            Descubra a oportunidade de entrar nesse mercado <span class="bg-gradient-to-r from-blue-400 to-blue-800 bg-clip-text text-transparent font-bold">que vem apresentando receitas excepcionais.</span>
         </span>
     </div>
     
