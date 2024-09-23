@@ -8,6 +8,7 @@ use App\Http\Controllers\PaymentNotificationController;
 use App\Http\Controllers\PixelController;
 
 use App\Http\Controllers\CotacaoController;
+use App\Http\Controllers\CaptchaController;
 
 
 // PAYLOADERS
@@ -34,7 +35,8 @@ Route::post('/process/plan/order', [PlanPayloaderController::class, 'data']);
 
 Route::post('/process/planCard/order', [PlanPayloaderController::class, 'CardData']);
 
-
+Route::get('/generate-captcha', [CaptchaController::class, 'generate'])->name('captcha.generate');
+Route::post('/verify-captcha', [CaptchaController::class, 'verify'])->name('captcha.verify');
 
 
 Route::get('/machines/list', [CotacaoController::class, 'listmachines']);

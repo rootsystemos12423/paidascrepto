@@ -42,6 +42,7 @@ use App\Http\Controllers\ExchangeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::middleware(['web'])->group(function () {
 
 Route::get('/set-cookie', function (Request $request) {
     $cookie = cookie('userDiscount', 'sharkDiscount', 60*24*30); // 60 minutos
@@ -68,6 +69,11 @@ Route::post('/createuser/{orderid}/post', [CheckoutController::class, 'CreateUse
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/captcha', function () {
+    return view('welcome-ads');
+});
+
 
 Route::get('/terms', function () {
     return view('terms');
@@ -200,4 +206,5 @@ Route::middleware([
         });
 
     });
+});
 });
