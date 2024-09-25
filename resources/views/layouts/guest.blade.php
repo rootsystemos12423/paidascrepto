@@ -6,10 +6,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1219283420207906882/1219283603884871700/logo-no-bg.png?ex=660abd58&is=65f84858&hm=3a6017d376e3dc90b48e9c9bf4315c83d42a5fc1a61b76e744009483733fcab6&" type="image/x-icon">
         <title>{{ config('app.name', 'Laravel') }}</title>
-        <script
-        src='//fw-cdn.com/12022705/4556207.js'
-        chat='true'>
-        </script>
            @foreach ($tags as $tag)
            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
            </script>

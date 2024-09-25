@@ -18,10 +18,6 @@
         kwaiq.page();
         kwaiq.track('contentView')
         </script>
-    <script
-    src='//fw-cdn.com/12022705/4556207.js'
-    chat='true'>
-    </script>
        @foreach ($tags as $tag)
        <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
        </script>
@@ -47,6 +43,13 @@
     </style>
 </head>
 <body class="bg-gray-100 antialiased font-roboto">
+    <a href="https://wa.me/5548920007104" target="_blank">
+        <button class="bg-green-500 text-xl hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full bottom-0 right-0 fixed m-4 flex items-center">
+            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
+          Contato WhatsApp
+        </button>
+      </a>
+      
     <header>
         <div class="w-full bg-gray-200 flex items-center justify-center p-3 bg-opacity-40">
             <div class="w-full max-w-5xl flex justify-between items-center px-4">

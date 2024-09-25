@@ -6,10 +6,6 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-        <script
-        src='//fw-cdn.com/12022705/4556207.js'
-        chat='true'>
-        </script>
            @foreach ($tags as $tag)
            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
            </script>
