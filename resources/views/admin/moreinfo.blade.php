@@ -129,7 +129,7 @@
                                         @if($withdrawal->status === 'approved')
                                         <td class="px-4 py-2 uppercase text-green-600 font-semibold whitespace-nowrap">PAGO</td>
                                         @elseif($withdrawal->status === 'pending')
-                                        <td class="px-4 py-2 uppercase text-orange-600 font-semibold whitespace-nowrap">PEDENTE</td>
+                                        <td class="px-4 py-2 uppercase text-orange-600 font-semibold whitespace-nowrap">PENDENTE</td>
                                         @else
                                         <td class="px-4 py-2 uppercase text-red-600 font-semibold whitespace-nowrap">RECUSADO</td>
                                         @endif

@@ -37,7 +37,7 @@ class UserController extends Controller
         
         $deposits = Checkout::where('email', $user->email)->get();
 
-        $totalDeposits = $deposits->where('status', 'aprovado')->sum(function ($deposit) {
+        $totalDeposits = $deposits->where('status', 'paid')->sum(function ($deposit) {
             $description = json_decode($deposit->description, true);
         
             // Corrigir formatação de valores
@@ -49,7 +49,7 @@ class UserController extends Controller
         });
             
         $withdrawals = Withdrawal::where('user_id', $user->id)
-            ->where('status', 'paid')
+            ->where('status', 'approved')
             ->get();
 
         $totalWithdrawals = '0'; // Começar a soma como string
