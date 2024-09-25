@@ -28,6 +28,9 @@
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider hidden md:table-cell">
                                     Documentos Verificados
                                 </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider hidden md:table-cell">
+                                    Detalhes
+                                </th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                     Ação
                                 </th>
@@ -62,6 +65,9 @@
                                     
                                     <td class="px-6 py-4 text-sm text-orange-600 hidden md:table-cell">
                                         Não
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-600 hidden md:table-cell">
+                                        {{  $withdrawal->details }}
                                     </td>
                                     <td class="px-6 py-4 text-sm font-medium">
                                         <select name="action" class="bg-gray-100 text-gray-800 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500">

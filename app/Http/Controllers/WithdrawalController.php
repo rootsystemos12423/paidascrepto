@@ -169,6 +169,38 @@ class WithdrawalController extends Controller
             return back()->withErrors(['error' => 'Saldo insuficiente para realizar o saque']);
         }
     
+         // Verifica se o usuário já realizou algum saque
+         $ultimoSaque = Withdrawal::where('user_id', $user->id)->where('status', 'approved')->latest()->first();
+
+         // Obtém a data atual
+         $dataAtual = Carbon::now();
+
+         // Se o usuário nunca sacou, compara com a data de criação da conta
+         if (!$ultimoSaque) {
+             $dataCriacaoConta = Carbon::parse($user->created_at);
+
+             // Verifica se já se passaram 2 semanas desde a criação da conta
+             if ($dataCriacaoConta->diffInWeeks($dataAtual) >= 2) {
+                 
+             } else {
+                 // Recusa o saque
+                 $diasRestantes = 14 - $dataCriacaoConta->diffInDays($dataAtual);
+                 return back()->withErrors(['error' => 'Você só poderá realizar seu primeiro saque após ' . $diasRestantes . ' dias.']);
+             }
+         } else {
+             // Se o usuário já sacou, compara com a data do último saque
+             $dataUltimoSaque = Carbon::parse($ultimoSaque->created_at);
+
+             // Verifica se já se passaram 2 semanas desde o último saque
+             if ($dataUltimoSaque->diffInWeeks($dataAtual) >= 2) {
+                 
+             } else {
+                 // Recusa o saque
+                 $diasRestantes = 14 - $dataUltimoSaque->diffInDays($dataAtual);
+                 return back()->withErrors(['error' => 'Você só poderá realizar outro saque após ' . $diasRestantes . ' dias.']);
+             }
+         }
+
         try {
             // Subtrair o valor do saldo do usuário
             $user->balance->balance_brl -= $request->input('amount');
@@ -219,6 +251,38 @@ class WithdrawalController extends Controller
     if ($balance < $request->input('amount')) {
         return back()->withErrors(['error' => 'Saldo insuficiente para realizar o saque']);
     }
+
+     // Verifica se o usuário já realizou algum saque
+     $ultimoSaque = Withdrawal::where('user_id', $user->id)->where('status', 'approved')->latest()->first();
+
+     // Obtém a data atual
+     $dataAtual = Carbon::now();
+
+     // Se o usuário nunca sacou, compara com a data de criação da conta
+     if (!$ultimoSaque) {
+         $dataCriacaoConta = Carbon::parse($user->created_at);
+
+         // Verifica se já se passaram 2 semanas desde a criação da conta
+         if ($dataCriacaoConta->diffInWeeks($dataAtual) >= 2) {
+             
+         } else {
+             // Recusa o saque
+             $diasRestantes = 14 - $dataCriacaoConta->diffInDays($dataAtual);
+             return back()->withErrors(['error' => 'Você só poderá realizar seu primeiro saque após ' . $diasRestantes . ' dias.']);
+         }
+     } else {
+         // Se o usuário já sacou, compara com a data do último saque
+         $dataUltimoSaque = Carbon::parse($ultimoSaque->created_at);
+
+         // Verifica se já se passaram 2 semanas desde o último saque
+         if ($dataUltimoSaque->diffInWeeks($dataAtual) >= 2) {
+             
+         } else {
+             // Recusa o saque
+             $diasRestantes = 14 - $dataUltimoSaque->diffInDays($dataAtual);
+             return back()->withErrors(['error' => 'Você só poderá realizar outro saque após ' . $diasRestantes . ' dias.']);
+         }
+     }
 
     try {
         // Subtrair o valor do saldo do usuário
