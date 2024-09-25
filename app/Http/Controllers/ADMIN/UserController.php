@@ -34,63 +34,71 @@ class UserController extends Controller
         ->where('status', 'paid')
         ->orderBy('created_at', 'asc') // 'asc' para obter o mais antigo
         ->first(); // Retorna o primeiro registro encontrado
-        
+
         $deposits = Checkout::where('email', $user->email)->get();
 
         $totalDeposits = $deposits->where('status', 'paid')->sum(function ($deposit) {
+            // Decodificar a string JSON do banco de dados
             $description = json_decode($deposit->description, true);
         
-            // Corrigir formatação de valores
+            // Verificar se a decodificação foi bem-sucedida
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                return 0; // Retornar 0 caso haja erro no JSON
+            }
+        
+            // Corrigir a formatação de valores monetários no formato brasileiro
             $valor = isset($description['valor']) ? floatval(preg_replace('/[^\d,.-]/', '', str_replace(',', '.', str_replace('.', '', $description['valor'])))) : 0;
             $taxaServico = isset($description['taxaServico']) ? floatval(preg_replace('/[^\d,.-]/', '', str_replace(',', '.', str_replace('.', '', $description['taxaServico'])))) : 0;
             $imposto = isset($description['imposto']) ? floatval(preg_replace('/[^\d,.-]/', '', str_replace(',', '.', str_replace('.', '', $description['imposto'])))) : 0;
         
+            // Retornar a soma dos valores
             return $valor + $taxaServico + $imposto;
         });
+        
             
         $withdrawals = Withdrawal::where('user_id', $user->id)
             ->where('status', 'approved')
             ->get();
 
-        $totalWithdrawals = '0'; // Começar a soma como string
+            $totalWithdrawals = 0.0; // Inicialize como número de ponto flutuante
 
-        foreach ($withdrawals as $withdrawal) {
-            $valor = '0'; // Inicializar o valor como string
-
-            switch ($withdrawal->method) {
-                case 'ALPH':
-                case 'KAS':
-                case 'LTC':
-                case 'BTC':
-                    // Obter o preço em BRL da criptomoeda correspondente
-                    $cryptoPrice = CryptoPrice::where('crypto_symbol', $withdrawal->method)->first();
-                    if ($cryptoPrice) {
-                        // Garantir que amount e price_in_brl são strings bem formatadas
-                        $amount = number_format($withdrawal->amount, 8, '.', ''); 
-                        $price_in_brl = number_format($cryptoPrice->price_in_brl, 8, '.', '');
-                        $valor = bcmul($amount, $price_in_brl, 8); // Multiplicação precisa
-                    }
-                    break;
-
-                case 'bank':
-                case 'pix':
-                    // Para métodos de banco ou pix, processar o valor diretamente
-                    $valor = number_format(floatval($withdrawal->amount), 8, '.', '');
-                    break;
-
-                default:
-                    $valor = '0'; // Caso algum método novo ou desconhecido apareça
-                    break;
+            foreach ($withdrawals as $withdrawal) {
+                $valor = 0.0; // Inicializar o valor como ponto flutuante
+            
+                switch ($withdrawal->method) {
+                    case 'ALPH':
+                    case 'KAS':
+                    case 'LTC':
+                    case 'BTC':
+                        // Obter o preço em BRL da criptomoeda correspondente
+                        $cryptoPrice = CryptoPrice::where('crypto_symbol', $withdrawal->method)->first();
+                        if ($cryptoPrice) {
+                            $amount = (float) $withdrawal->amount; // Converter para float
+                            $price_in_brl = (float) $cryptoPrice->price_in_brl; // Converter para float
+                            $valor = $amount * $price_in_brl; // Multiplicação simples
+                        }
+                        break;
+            
+                    case 'bank':
+                    case 'pix':
+                        // Para métodos de banco ou pix, processar o valor diretamente
+                        $valor = (float) $withdrawal->amount; // Converter para float
+                        break;
+            
+                    default:
+                        $valor = 0.0; // Caso algum método novo ou desconhecido apareça
+                        break;
+                }
+            
+                // Somar ao total usando a soma de float
+                $totalWithdrawals += $valor;
             }
-
-            // Somar ao total usando `bcadd` para precisão
-            $totalWithdrawals = bcadd($totalWithdrawals, $valor, 8);
-        }
-
-        $chartData = [
-            $totalDeposits,
-            $totalWithdrawals
-        ];
+            
+            $chartData = [
+                $totalDeposits,
+                $totalWithdrawals
+            ];
+                        
 
         return view('admin.moreinfo', compact('user', 'pedido', 'chartData'));
     }
