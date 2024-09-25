@@ -126,9 +126,9 @@
                                                  <span class="uppercase font-bold">{{ $withdrawal->method }}</span>
                                             @endif
                                         </td>
-                                        @if($withdrawal->status === 'paid')
+                                        @if($withdrawal->status === 'approved')
                                         <td class="px-4 py-2 uppercase text-green-600 font-semibold whitespace-nowrap">PAGO</td>
-                                        @elseif($withdrawal->status === 'in_review')
+                                        @elseif($withdrawal->status === 'pending')
                                         <td class="px-4 py-2 uppercase text-orange-600 font-semibold whitespace-nowrap">PEDENTE</td>
                                         @else
                                         <td class="px-4 py-2 uppercase text-red-600 font-semibold whitespace-nowrap">RECUSADO</td>
