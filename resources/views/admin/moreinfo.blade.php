@@ -21,7 +21,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- BTC -->
                     <div class="flex items-center space-x-4">
-                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.png" alt="BTC Logo">
+                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.webp" alt="BTC Logo">
                         <div>
                             <p class="font-semibold text-gray-800">BTC</p>
                             <p class="text-2xl text-gray-700">{{ $user->balance->balance_btc }} BTC</p>
@@ -33,7 +33,7 @@
             
                     <!-- ALPH -->
                     <div class="flex items-center space-x-4">
-                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/ALPH.png" alt="ALPH Logo">
+                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/ALPH.webp" alt="ALPH Logo">
                         <div>
                             <p class="font-semibold text-gray-800">ALPH</p>
                             <p class="text-2xl text-gray-700">{{ $user->balance->balance_alph }} ALPH</p>
@@ -45,7 +45,7 @@
             
                     <!-- KAS -->
                     <div class="flex items-center space-x-4">
-                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/KAS.png" alt="KAS Logo">
+                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/KAS.webp" alt="KAS Logo">
                         <div>
                             <p class="font-semibold text-gray-800">KAS</p>
                             <p class="text-2xl text-gray-700">{{ $user->balance->balance_kaspa }} KAS</p>
@@ -57,7 +57,7 @@
             
                     <!-- LTC -->
                     <div class="flex items-center space-x-4">
-                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/LTC.png" alt="LTC Logo">
+                        <img class="w-10 h-10 object-contain" src="/images/cripto-logos/LTC.webp" alt="LTC Logo">
                         <div>
                             <p class="font-semibold text-gray-800">LTC</p>
                             <p class="text-2xl text-gray-700">{{ $user->balance->balance_ltc }} LTC</p>
@@ -110,16 +110,16 @@
                                         </td>
                                         <td class="px-4 py-2 text-gray-600 flex items-center space-x-2 whitespace-nowrap">
                                             @if($withdrawal->method === 'LTC')
-                                                <img class="w-8 h-8 object-contain" src="/images/cripto-logos/LTC.png" alt="{{ $withdrawal->method }} Logo">
+                                                <img class="w-8 h-8 object-contain" src="/images/cripto-logos/LTC.webp" alt="{{ $withdrawal->method }} Logo">
                                                 <span class="uppercase font-bold">{{ $withdrawal->method }}</span>
                                             @elseif($withdrawal->method === 'BTC')
-                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/BTC.png" alt="{{ $withdrawal->method }} Logo">
+                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/BTC.webp" alt="{{ $withdrawal->method }} Logo">
                                                  <span class="uppercase font-bold">{{ $withdrawal->method }}</span>
                                             @elseif($withdrawal->method === 'ALPH')
-                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/ALPH.png" alt="{{ $withdrawal->method }} Logo">
+                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/ALPH.webp" alt="{{ $withdrawal->method }} Logo">
                                                  <span class="uppercase font-bold">{{ $withdrawal->method }}</span>
                                             @elseif($withdrawal->method === 'KAS')
-                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/KAS.png" alt="{{ $withdrawal->method }} Logo">
+                                                 <img class="w-8 h-8 object-contain" src="/images/cripto-logos/KAS.webp" alt="{{ $withdrawal->method }} Logo">
                                                  <span class="uppercase font-bold">{{ $withdrawal->method }}</span>
                                             @else
                                                  <img class="w-8 h-8 object-contain" src="/images/cripto-logos/BRL.webp" alt="{{ $withdrawal->method }} Logo">

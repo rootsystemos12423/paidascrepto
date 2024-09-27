@@ -79,7 +79,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2">
                 <!-- BTC -->
                 <div class="flex items-center border border-gray-200 p-6 space-x-4 rounded-xl shadow-sm bg-gray-50">
-                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.png" alt="BTC Logo">
+                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/BTC.webp" alt="BTC Logo">
                     <div>
                         <p class="font-semibold text-gray-800">BTC</p>
                         <p class="text-xl text-gray-700">{{ $user->balance->balance_btc }}</p>
@@ -91,7 +91,7 @@
         
                 <!-- ALPH -->
                 <div class="flex items-center space-x-4 border border-gray-200 p-6 rounded-xl shadow-sm bg-gray-50">
-                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/ALPH.png" alt="ALPH Logo">
+                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/ALPH.webp" alt="ALPH Logo">
                     <div>
                         <p class="font-semibold text-gray-800">ALPH</p>
                         <p class="text-xl text-gray-700">{{ $user->balance->balance_alph }}</p>
@@ -103,7 +103,7 @@
         
                 <!-- KAS -->
                 <div class="flex items-center space-x-4 border border-gray-200 p-6 rounded-xl shadow-sm bg-gray-50">
-                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/KAS.png" alt="KAS Logo">
+                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/KAS.webp" alt="KAS Logo">
                     <div>
                         <p class="font-semibold text-gray-800">KAS</p>
                         <p class="text-xl text-gray-700">{{ $user->balance->balance_kaspa }}</p>
@@ -115,7 +115,7 @@
         
                 <!-- LTC -->
                 <div class="flex items-center space-x-4 border border-gray-200 p-6 rounded-xl shadow-sm bg-gray-50">
-                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/LTC.png" alt="LTC Logo">
+                    <img class="w-10 h-10 object-contain" src="/images/cripto-logos/LTC.webp" alt="LTC Logo">
                     <div>
                         <p class="font-semibold text-gray-800">LTC</p>
                         <p class="text-xl text-gray-700">{{ $user->balance->balance_ltc }}</p>

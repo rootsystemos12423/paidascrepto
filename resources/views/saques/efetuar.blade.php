@@ -47,23 +47,23 @@
                                 <!-- Dropdown Options -->
                                 <div x-show="open" x-cloak class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                                     <div class="flex items-center justify-between px-4 py-2 hover:bg-gray-100 cursor-pointer" 
-                                        @click="selected = { text: 'BTC (BITCOIN)', img: '/images/cripto-logos/BTC.png', balance: '{{ $balance->balance_btc }} BTC', rate: {{ $cryptoPrices['BTC']->price_in_brl }} }; open = false">
-                                        <div class="flex"><img src="/images/cripto-logos/BTC.png" alt="BTC" class="h-5 w-5 mr-2"><span>BTC (BITCOIN)</span></div>
+                                        @click="selected = { text: 'BTC (BITCOIN)', img: '/images/cripto-logos/BTC.webp', balance: '{{ $balance->balance_btc }} BTC', rate: {{ $cryptoPrices['BTC']->price_in_brl }} }; open = false">
+                                        <div class="flex"><img src="/images/cripto-logos/BTC.webp" alt="BTC" class="h-5 w-5 mr-2"><span>BTC (BITCOIN)</span></div>
                                         <span>{{ $balance->balance_btc }} BTC</span>
                                     </div>
                                     <div class="flex items-center justify-between px-4 py-2 hover:bg-gray-100 cursor-pointer" 
-                                        @click="selected = { text: 'ALPH (ALEPHIUM)', img: '/images/cripto-logos/ALPH.png', balance: '{{ $balance->balance_alph }} ALPH', rate: {{ $cryptoPrices['ALPH']->price_in_brl }} }; open = false">
-                                        <div class="flex"><img src="/images/cripto-logos/ALPH.png" alt="ALPH" class="h-5 w-5 mr-2"><span>ALPH (ALEPHIUM)</span></div>
+                                        @click="selected = { text: 'ALPH (ALEPHIUM)', img: '/images/cripto-logos/ALPH.webp', balance: '{{ $balance->balance_alph }} ALPH', rate: {{ $cryptoPrices['ALPH']->price_in_brl }} }; open = false">
+                                        <div class="flex"><img src="/images/cripto-logos/ALPH.webp" alt="ALPH" class="h-5 w-5 mr-2"><span>ALPH (ALEPHIUM)</span></div>
                                         <span>{{ $balance->balance_alph }} ALPH</span>
                                     </div>
                                     <div class="flex items-center justify-between px-4 py-2 hover:bg-gray-100 cursor-pointer" 
-                                        @click="selected = { text: 'KAS (KASPA)', img: '/images/cripto-logos/KAS.png', balance: '{{ $balance->balance_kaspa }} KAS', rate: {{ $cryptoPrices['KAS']->price_in_brl }} }; open = false">
-                                        <div class="flex"><img src="/images/cripto-logos/KAS.png" alt="KAS" class="h-5 w-5 mr-2"><span>KAS (KASPA)</span></div>
+                                        @click="selected = { text: 'KAS (KASPA)', img: '/images/cripto-logos/KAS.webp', balance: '{{ $balance->balance_kaspa }} KAS', rate: {{ $cryptoPrices['KAS']->price_in_brl }} }; open = false">
+                                        <div class="flex"><img src="/images/cripto-logos/KAS.webp" alt="KAS" class="h-5 w-5 mr-2"><span>KAS (KASPA)</span></div>
                                         <span>{{ $balance->balance_kaspa }} KAS</span>
                                     </div>
                                     <div class="flex items-center justify-between px-4 py-2 hover:bg-gray-100 cursor-pointer" 
-                                        @click="selected = { text: 'LTC (LITECOIN)', img: '/images/cripto-logos/LTC.png', balance: '{{ $balance->balance_ltc }} LTC', rate: {{ $cryptoPrices['LTC']->price_in_brl }} }; open = false">
-                                        <div class="flex"><img src="/images/cripto-logos/LTC.png" alt="LTC" class="h-5 w-5 mr-2"><span>LTC (LITECOIN)</span></div>
+                                        @click="selected = { text: 'LTC (LITECOIN)', img: '/images/cripto-logos/LTC.webp', balance: '{{ $balance->balance_ltc }} LTC', rate: {{ $cryptoPrices['LTC']->price_in_brl }} }; open = false">
+                                        <div class="flex"><img src="/images/cripto-logos/LTC.webp" alt="LTC" class="h-5 w-5 mr-2"><span>LTC (LITECOIN)</span></div>
                                         <span>{{ $balance->balance_ltc }} LTC</span>
                                     </div>
                                 </div>

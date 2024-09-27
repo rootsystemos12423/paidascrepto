@@ -61,22 +61,22 @@
                             @endphp
                             @if($description['fornecedor'] === 'Blake3')
                                 <div class="p-2 flex gap-2 items-center text-gray-600 rounded-lg">
-                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/ALPH.png" alt="{{ $pedido->method }} Logo">
+                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/ALPH.webp" alt="{{ $pedido->method }} Logo">
                                     <span>Alephium</span>
                                 </div>
                             @elseif($description['fornecedor'] === 'KHeavyHash')
                                 <div class="p-2 flex gap-2 items-center text-gray-600 rounded-lg">
-                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/KAS.png" alt="{{ $pedido->method }} Logo">
+                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/KAS.webp" alt="{{ $pedido->method }} Logo">
                                     <span>Kaspa</span>
                                 </div>
                             @elseif($description['fornecedor'] === 'Scrypt')
                                 <div class="p-2 flex gap-2 items-center text-gray-600 rounded-lg">
-                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/LTC.png" alt="{{ $pedido->method }} Logo">
+                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/LTC.webp" alt="{{ $pedido->method }} Logo">
                                     <span>Litecoin</span>
                                 </div>
                           @elseif($description['fornecedor'] === 'SHA-256')
                                 <div class="p-2 flex gap-2 items-center text-gray-600 rounded-lg">
-                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/BTC.png" alt="{{ $pedido->method }} Logo">
+                                    <img class="w-8 h-8 object-contain" src="/images/cripto-logos/BTC.webp" alt="{{ $pedido->method }} Logo">
                                     <span>Bitcoin</span>
                                 </div>
                             @endif

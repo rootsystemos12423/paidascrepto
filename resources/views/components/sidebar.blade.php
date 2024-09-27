@@ -3,7 +3,7 @@
     <header class="bg-white shadow-lg flex items-center justify-between p-4 md:hidden w-full">
         <!-- Logo -->
         <div class="flex items-center">
-            <img src="/images/logo.png" alt="Logo" class="h-8">
+            <img src="/images/logo.webp" alt="Logo" class="h-8">
             <span class="ml-2 text-xl font-bold text-gray-800">Osorno Crypto</span>
         </div>
 
@@ -17,7 +17,7 @@
     <div class="w-64 h-dvh bg-white shadow-lg hidden lg:flex fixed left-0 lg:flex-col overflow-y-auto">
             <!-- Logo -->
             <div class="flex items-center justify-center py-6">
-                <img src="/images/logo.png" alt="Logo" class="h-10">
+                <img src="/images/logo.webp" alt="Logo" class="h-10">
                 <span class="ml-3 text-2xl font-bold text-gray-800">Osorno Crypto</span>
             </div>
         

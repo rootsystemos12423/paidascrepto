@@ -56,7 +56,7 @@
     <div style="max-width: 800px; margin: auto; background: #1e293b; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);">
         <!-- Banner Space -->
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://aurora-miner.b-cdn.net/images/BANNER-EMAIL.png" style="width: 100%; max-width: 550px; height: auto; border-radius: 8px;">
+            <img src="https://aurora-miner.b-cdn.net/images/BANNER-EMAIL.webp" style="width: 100%; max-width: 550px; height: auto; border-radius: 8px;">
         </div>
         <p>Olá, <strong style="color: #00ff9d;">{{ $user->name }}</strong>,</p>
         <p>Agradecemos por se juntar à nossa comunidade! Notamos que você criou uma conta, mas ainda não experimentou nossos planos exclusivos. Estamos aqui para lembrá-lo do mundo de possibilidades que a Osorno Crypto pode oferecer.</p>

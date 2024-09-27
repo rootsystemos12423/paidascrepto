@@ -8,7 +8,7 @@
                       <!-- Tutorial 1 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="w-16 h-16" alt="YouTube">
+                              <img src="https://img.icons8.com/color/48/000000/youtube-play.webp" class="w-16 h-16" alt="YouTube">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Tutorial rápido</h3>
                                   <p class="text-gray-600 text-sm">Configure sua conta em apenas 3 minutos</p>
@@ -20,7 +20,7 @@
                       <!-- Tutorial 2 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="w-16 h-16" alt="YouTube">
+                              <img src="https://img.icons8.com/color/48/000000/youtube-play.webp" class="w-16 h-16" alt="YouTube">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Como virar um afiliado?</h3>
                                   <p class="text-gray-600 text-sm">Torne-se um afiliado e tenha um renda passiva por mês com comissões</p>
@@ -32,7 +32,7 @@
                       <!-- Tutorial 3 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/youtube-play.png" class="w-16 h-16" alt="YouTube">
+                              <img src="https://img.icons8.com/color/48/000000/youtube-play.webp" class="w-16 h-16" alt="YouTube">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Ativar Maquinas</h3>
                                   <p class="text-gray-600 text-sm">Como saber que minhas maquinas estão funcionando</p>
@@ -50,7 +50,7 @@
                       <!-- Suporte 1 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/whatsapp.png" class="w-16 h-16" alt="WhatsApp">
+                              <img src="https://img.icons8.com/color/48/000000/whatsapp.webp" class="w-16 h-16" alt="WhatsApp">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Suporte WhatsApp</h3>
                                   <p class="text-gray-600 text-sm">Entre em contato conosco</p>
@@ -62,7 +62,7 @@
                       <!-- Suporte 2 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/whatsapp.png" class="w-16 h-16" alt="WhatsApp">
+                              <img src="https://img.icons8.com/color/48/000000/whatsapp.webp" class="w-16 h-16" alt="WhatsApp">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Contato com Gerente de conta</h3>
                                   <p class="text-gray-600 text-sm">Fale com seu Gerente de contas</p>
@@ -74,7 +74,7 @@
                       <!-- Suporte 3 -->
                       <div class="flex justify-between items-center">
                           <div class="flex items-center space-x-2">
-                              <img src="https://img.icons8.com/color/48/000000/help.png" class="w-16 h-16" alt="Help Center">
+                              <img src="https://img.icons8.com/color/48/000000/help.webp" class="w-16 h-16" alt="Help Center">
                               <div>
                                   <h3 class="text-gray-500 font-semibold">Help Center</h3>
                                   <p class="text-gray-600 text-sm">Encontre possíveis soluções para os seus problemas</p>

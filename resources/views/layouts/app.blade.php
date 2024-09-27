@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-        <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/images/logo.webp" type="image/x-icon">
            @foreach ($tags as $tag)
            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $tag->tag_id }}">
            </script>
@@ -56,7 +56,7 @@
             @foreach ($cryptoPrices as $crypto)
             <div class="flex items-center text-xs font-medium">
                 <!-- Logo da Cripto -->
-                <img src="/images/cripto-logos/{{ strtoupper($crypto->crypto_symbol) }}.png" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
+                <img src="/images/cripto-logos/{{ strtoupper($crypto->crypto_symbol) }}.webp" alt="{{ $crypto->crypto_symbol }}" class="h-6 w-6 mr-2">
                 <!-- Valorização/Desvalorização -->
                 @if ($crypto->change_pct_24h !== null)
                 @if ($crypto->change_pct_24h > 0)

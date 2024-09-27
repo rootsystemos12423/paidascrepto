@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="flex items-center justify-center">
-        <img class="size-24" src="/images/logo.png" alt="">
+        <img class="size-24" src="/images/logo.webp" alt="">
         </div>    
         <form method="POST" action="{{ route('login') }}">
             @csrf

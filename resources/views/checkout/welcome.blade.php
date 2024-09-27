@@ -6,7 +6,7 @@
     <title>Osorno Crypto - Checkout Seguro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/logo.webp" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         @livewireStyles
@@ -133,7 +133,7 @@ $total = $subtotal + $taxaServico + $imposto;
           <div class="col-span-1 bg-white p-6 rounded-md shadow-md">
             <h3 class="text-xl font-bold text-gray-800 mb-6">RESUMO DA COMPRA</h3>
             <div class="flex items-center mb-4">
-              <img src="/images/logo.png" alt="Algoritmo Mágico" class="w-24 h-24 object-cover" />
+              <img src="/images/logo.webp" alt="Algoritmo Mágico" class="w-24 h-24 object-cover" />
               <div class="ml-4">
                 <p class="font-semibold text-gray-800">Osorno Crypto</p>
                 <p class="text-sm text-gray-500">Total Hoje:</p>
