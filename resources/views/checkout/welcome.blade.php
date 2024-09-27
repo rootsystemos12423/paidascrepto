@@ -90,20 +90,20 @@ $total = $subtotal + $taxaServico + $imposto;
               <!-- Botões de Seleção de Pagamento -->
               <div class="flex items-center space-x-4">
                 <!-- Botão PIX -->
-                <button 
+                <div 
                   @click="metodoPagamento = 'pix'" 
                   :class="metodoPagamento === 'pix' ? 'bg-blue-200 text-blue-600' : 'bg-gray-200 text-gray-800'" 
-                  class="p-6 rounded-md flex items-center justify-center w-10 h-10">
+                  class="p-6 rounded-md cursor-pointer flex items-center justify-center w-10 h-10">
                   <i class="fa-brands fa-pix text-2xl"></i>
-                </button>
+                </div>
       
                 <!-- Botão Cartão de Crédito -->
-                <button 
+                <div 
                   @click="metodoPagamento = 'cartao'" 
                   :class="metodoPagamento === 'cartao' ? 'bg-blue-200 text-blue-600' : 'bg-gray-200 text-gray-800'" 
-                  class="p-6 rounded-md flex items-center justify-center w-10 h-10">
+                  class="p-6 rounded-md flex cursor-pointer items-center justify-center w-10 h-10">
                   <i class="text-2xl fa-regular fa-credit-card"></i>
-                </button>
+                </div>
               </div>
       
               <!-- Pagamento Cartão de Crédito -->
