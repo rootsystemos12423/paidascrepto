@@ -65,8 +65,6 @@ class CheckoutController extends Controller
             'valor' => 'required|string',
             'contato' => 'required|string',
             'lingua' => 'required|string',
-            'telefone' => 'required|string',
-            'email' => 'required|string'
         ]);
     
         // Cria uma nova instância de Checkout
@@ -94,8 +92,6 @@ class CheckoutController extends Controller
             'imposto' => number_format($imposto, 2, ',', '.'), // Imposto formatado
             'contato' => $validatedData['contato'],
             'lingua' => $validatedData['lingua'],
-            'telefone' => $validatedData['telefone'],
-            'email' => $validatedData['email']
         ];
 
         if($request->hasCookie('AffiliateCodeCookie')){
