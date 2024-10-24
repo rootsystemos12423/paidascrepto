@@ -67,7 +67,7 @@ $total = $subtotal + $taxaServico + $imposto;
                   </div>
                   <div>
                     <label for="email" class="text-sm font-semibold text-gray-800">E-mail *</label>
-                    <input type="email" id="email" value="{{ $description['email'] }}" name="email" class="w-full border px-3 py-2 rounded-md" required />
+                    <input type="email" id="email" value="@if(isset($description['email'])){{ $description['email'] }}@endif" name="email" class="w-full border px-3 py-2 rounded-md" required />
                   </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -77,7 +77,7 @@ $total = $subtotal + $taxaServico + $imposto;
                   </div>
                   <div>
                     <label for="telefone" class="text-sm font-semibold text-gray-800">Telefone ou Celular</label>
-                    <input type="text" id="telefone" value="{{ $description['telefone'] }}" name="telefone" class="w-full border px-3 py-2 rounded-md" />
+                    <input type="text" id="telefone" value="@if(isset($description['telefone'])){{ $description['telefone'] }}@endif" name="telefone" class="w-full border px-3 py-2 rounded-md" />
                   </div>
                 </div>
               </form>
@@ -98,12 +98,14 @@ $total = $subtotal + $taxaServico + $imposto;
                 </div>
       
                 <!-- Botão Cartão de Crédito -->
-                <div 
+                <!--
+                <div
                   @click="metodoPagamento = 'cartao'" 
                   :class="metodoPagamento === 'cartao' ? 'bg-blue-200 text-blue-600' : 'bg-gray-200 text-gray-800'" 
                   class="p-6 rounded-md flex cursor-pointer items-center justify-center w-10 h-10">
                   <i class="text-2xl fa-regular fa-credit-card"></i>
                 </div>
+              -->
               </div>
       
               <!-- Pagamento Cartão de Crédito -->
