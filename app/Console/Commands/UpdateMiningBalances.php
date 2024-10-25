@@ -30,8 +30,8 @@ class UpdateMiningBalances extends Command
             $cryptoSymbol = $this->mapAlgorithmToCryptoSymbol($algorithm);
             $cryptoPriceInBrl = $this->getCryptoPriceInBrl($cryptoSymbol);
     
-            // Converte o lucro de mineração de dólares para BRL
-            $profitInBrl = $miningProfitInDollars * $dolar->price_in_brl / $cryptoPriceInBrl * 0.01 / 24;
+            // Converte o lucro de mineração de dólares para BRL (100% de lucro ao mês)
+            $profitInBrl = $miningProfitInDollars * $dolar->price_in_brl / $cryptoPriceInBrl * 0.1 / 24;
     
             // 3. Encontrar todas as cotas de máquinas associadas com base no tipo de criptomoeda
             $machineCotas = MachineCota::where('machine_id', $machine->id)->get();
