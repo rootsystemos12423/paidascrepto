@@ -110,7 +110,7 @@
                             this.cotaValue = this.formatCurrency(machineValue * 0.006 * this.quantity);
                             
                             // Converte o lucro de mineração de dólares para BRL com a lógica ajustada para 1% por mês, dividido por 24 dias
-                            this.miningOutput = this.formatCurrency((miningProfit * dolarPrice * 0.1 * 30) * this.quantity);
+                            this.miningOutput = this.formatCurrency((miningProfit * dolarPrice * 0.4 * 30) * this.quantity);
                         } else {
                             this.cotaValue = 'R$0,00';
                             this.miningOutput = 'R$0,00';

@@ -37,11 +37,25 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
         }
+
+        .animate-entry {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: fadeInScale 0.5s ease-out forwards;
+        }
+
+        /* Keyframes da animação */
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 antialiased font-roboto">
     <a href="https://wa.me/5548920007104" target="_blank">
-        <button class="bg-green-500 text-xl hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full bottom-0 right-0 fixed m-4 flex items-center">
+        <button class="bg-green-500 z-50 text-xl hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full bottom-0 right-0 fixed m-4 flex items-center">
             <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
           Contato WhatsApp
         </button>
@@ -253,9 +267,27 @@
             <canvas id="futuristicChart"></canvas>
         </div>
     </div>
+    
 
     <div class="w-full flex justify-center p-6">
         <a href="#buy" id="scrollToBuy" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 w-full md:w-1/4 lg:w-1/5 text-center">ADQUIRIR COTAS</a>
+    </div>
+
+
+    <div class="flex flex-col items-center justify-center">
+        <div class="w-full p-4 flex flex-col items-center justify-center">
+            <div class="text-2xl p-4 font-semibold justify-center flex flex-col items-center md:w-1/2 w-full text-center">
+                <h1>Saques Ao Vivo</h1>
+                <span class="text-gray-400 text-lg font-medium">Investidores efetuando saques ao vivo de seus retornos obtidos.</span>
+            </div>
+            <div id="userSaques" class="space-y-4 overflow-hidden p-2"></div>
+        </div>
+    </div>
+
+    <div class="w-full flex justify-center p-6">
+        <a href="#buy" id="scrollToBuy" class="rounded-lg py-3 md:text-2xl text-xl font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out w-full md:w-1/4 lg:w-1/5 text-center shadow-lg">
+            ADQUIRIR COTAS
+        </a>
     </div>
     
     <div class="bg-gray-50 p-8 rounded-lg shadow-md w-full mx-auto flex justify-center">
@@ -418,7 +450,7 @@
                     this.cotaValue = this.formatCurrency(machineValue * 0.006 * this.quantity);
                     
                     // Converte o lucro de mineração de dólares para BRL com a lógica ajustada para 10% por mês, dividido por 24 dias
-                    this.miningOutput = this.formatCurrency((miningProfit * dolarPrice * 0.1 * 30) * this.quantity);
+                    this.miningOutput = this.formatCurrency((miningProfit * dolarPrice * 0.4 * 30) * this.quantity);
                 } else {
                     this.cotaValue = 'R$0,00';
                     this.miningOutput = 'R$0,00';
@@ -512,6 +544,7 @@
             }
         });
     </script>
+    <script src="/js/saques.js"></script>
 </body>
 
 </html>

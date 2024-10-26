@@ -41,26 +41,45 @@ document.addEventListener('DOMContentLoaded', function() {
             'Eduardo Pereira', 'Monica Carvalho', 'Angelo Martins', 'Clara Mendes'
           ];
                     
-          const valorMin = 500;
+          const valorMin = 1400;
           const valorMax = 10000;
           
           const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
           const valorAleatorio = (Math.random() * (valorMax - valorMin) + valorMin).toFixed(2);
+          const valorFormatado = Number(valorAleatorio).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   
           // Cria o container do saque e alterna a cor de fundo
-          const saqueDiv = document.createElement('div');
-          saqueDiv.className = `p-4 rounded-lg flex justify-between items-center ${useDarkBg ? 'bg-gray-800' : 'bg-gray-700'} fade-in transition-height`;
-          saqueDiv.innerHTML = `
-              <div class="text-white">
-                  <p class="font-bold">Usuário: ${nomeAleatorio}</p>
-                  <p class="font-bold text-emerald-400">Valor: R$ ${valorAleatorio}</p>
-              </div>
-              <span class="text-green-400 font-bold">Concluído</span>
-          `;
-          
+          // Cria o container do saque e aplica a animação inicial
+        const saqueDiv = document.createElement('div');
+        saqueDiv.className = `p-6 rounded-xl w-full flex justify-between items-center 
+                              bg-white fade-in transition-height shadow-md hover:shadow-lg 
+                              transform hover:scale-105 transition-transform duration-300`;
+
+        // Adiciona a classe de animação para entrada suave
+        saqueDiv.classList.add('animate-entry');
+        setTimeout(() => {
+            // Remove a classe de animação após 500ms (duração da animação)
+            saqueDiv.classList.remove('animate-entry');
+        }, 500);
+
+        saqueDiv.innerHTML = `
+            <div class="flex items-center space-x-4">
+                <div class="text-gray-800">
+                    <p class="font-bold text-lg">Usuário: ${nomeAleatorio}</p>
+                    <p class="font-bold text-blue-500 text-lg">Valor: R$ ${valorFormatado}</p>
+                </div>
+            </div>
+           <div class="flex items-center justify-center bg-blue-500 rounded-full w-10 h-10">
+                    <!-- Ícone de saque (tema claro) -->
+                    <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+        `;
+
           // Adiciona o novo saque ao container e alterna a cor de fundo
           // Dentro de generateRandomSaque, removemos a chamada duplicada para remoção do elemento
-          if (saquesContainer.children.length >= 10) {
+          if (saquesContainer.children.length >= 6) {
               // Chamamos removeElementSmoothly para o último filho
               removeElementSmoothly(saquesContainer.children[saquesContainer.children.length - 1]);
           }
@@ -70,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   
       // Gera 10 saques iniciais com cores alternadas
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 6; i++) {
           generateRandomSaque();
       }
   
